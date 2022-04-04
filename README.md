@@ -9,7 +9,7 @@ Skills Used:
 
 -Data Cleaning (Dealing with nulls, Resetting index (since Jersey number column isn't actually unique), Change column names)
    
--Data TransformatioN (Splitting strings into multiple columns, Creating new categorical variables based off preexisting variable, Create new columns based on mathematical calculations)
+-Data Transformation (Splitting strings into multiple columns, Creating new categorical variables based off preexisting variable, Create new columns based on mathematical calculations)
   
  -Writing Functions
  
