@@ -1,0 +1,2165 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="UTF-8" ><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+
+<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-6019732-1"></script>
+<!--Begin comScore Tag -->
+<script type="rocketlazyloadscript">
+	var _comscore = _comscore || [];
+	_comscore.push({ c1: "2", c2: "6035223", c3: "", c4: "www.fbschedules.com" });
+(function() {
+		var s = document.createElement("script"), el = 
+document.getElementsByTagName("script")[0]; s.async = true;
+	s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+	el.parentNode.insertBefore(s, el);
+	})();
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/p?c1=2&c2=&c3=&c4=www.fbschedules.com&c5=&c6=&c15=&cv=2.0&cj=1" />
+</noscript>
+<!--End comScore Tag -->
+<!-- Start DFP SETUP - Header Tags -->
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+      var gptadslots=[], googletag = googletag || {}; googletag.cmd = googletag.cmd || [];
+      (function(){ var gads = document.createElement('script');
+          gads.async = true; gads.type = 'text/javascript';
+          var useSSL = 'https:' == document.location.protocol;
+          gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+          var node = document.getElementsByTagName('script')[0];
+          node.parentNode.insertBefore(gads, node);
+      })();
+</script>
+<script data-minify="1" type='text/javascript' src='https://www.sicemdawgs.com/wp/wp-content/cache/min/1/lib/js/sdpdfphelper.js?ver=1647485200' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+      googletag.cmd.push(function() {
+          googletag.pubads().enableAsyncRendering(); googletag.pubads().enableSingleRequest();
+          googletag.pubads().setTargeting('title', sdpTargeting.title)
+                            .setTargeting('targetPaths', sdpTargeting.targetPaths)
+                            .setTargeting('fullPath', sdpTargeting.fullPath)
+                            .setTargeting('queryStr', sdpTargeting.queryStr)
+                            .setTargeting('domainName', sdpTargeting.domainName);
+      });
+</script>
+<!-- DFP SETUP end -->
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-6019732-1');
+</script>
+<script data-minify="1" async custom-element="amp-ad" src="https://www.sicemdawgs.com/wp/wp-content/cache/min/1/v0/amp-ad-0.1.js?ver=1647485200"></script>
+<link rel="shortcut icon" href="https://www.sicemdawgs.com/wp/wp-content/uploads/2017/07/favicon.ico" /><link rel="pingback" href="https://www.sicemdawgs.com/wp/xmlrpc.php" />
+<meta property="og:image" content="https://www.sicemdawgs.com/wp/wp-content/uploads/2014/07/sicem-fb-2014-1.png" />
+<meta name="twitter:image" content="https://www.sicemdawgs.com/wp/wp-content/uploads/2014/07/sicem-fb-2014-1.png" />
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v18.2.1 (Yoast SEO v18.4.1) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>UGA Football Roster | Georgia Bulldogs | SicEmDawgs.com</title><style id="rocket-critical-css">.aligncenter{clear:both}html,body,div,span,iframe,h1,h2,h3,h5,p,a,img,ins,strong,i,ul,li,form,table,tbody,thead,tr,th,td,article,header,nav,section{margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline}article,header,nav,section{display:block}ul{list-style:none}table{border-collapse:collapse;border-spacing:0}html{overflow-x:hidden}body{color:#444;font-size:1rem;-webkit-font-smoothing:antialiased;font-weight:400;line-height:100%;margin:0px auto;padding:0px}h1,h2,h3,h5,h2 a{-webkit-backface-visibility:hidden;color:#222}img{max-width:100%;height:auto;-webkit-backface-visibility:hidden}iframe{max-width:100%}a,a:visited{text-decoration:none}#mvp-site{overflow:hidden;width:100%}.relative{position:relative}.right{float:right}.left{float:left}.aligncenter{display:block;margin:0 auto}#mvp-top-head-wrap{-webkit-box-shadow:0 2px 2px 0 rgba(0,0,0,0.1);-moz-box-shadow:0 2px 2px 0 rgba(0,0,0,0.1);-ms-box-shadow:0 2px 2px 0 rgba(0,0,0,0.1);-o-box-shadow:0 2px 2px 0 rgba(0,0,0,0.1);box-shadow:0 2px 2px 0 rgba(0,0,0,0.1);position:fixed;left:0;top:0;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);transform:translate3d(0,0,0);width:100%;z-index:9000}#mvp-main-nav-wrap{float:left;position:relative;width:100%}#mvp-top-nav-wrap{width:100%;height:50px;z-index:50}.mvp-main-box-cont{margin:0 auto;width:1200px;height:100%}#mvp-main-wrap .mvp-main-box-cont{position:relative;z-index:5}#mvp-top-nav-cont{border-bottom:1px solid rgba(0,0,0,0.2);width:100%}.mvp-top-nav-right-out{float:left;margin-right:-270px;width:100%}.mvp-top-nav-right-in{margin-right:270px}#mvp-top-nav-left{width:100%}.mvp-top-nav-left-out{float:right;margin-left:0;width:100%}.mvp-top-nav-menu-but{display:none;margin-right:20px;padding:3px 0}#mvp-top-nav-logo{line-height:0;max-height:50px}h2.mvp-logo-title{display:block;font-size:0px}.mvp-top-nav-left-in{margin-left:0}#mvp-top-nav-right{text-align:right;width:270px;height:50px}#mvp-top-nav-soc{display:inline-block;margin-right:10px;width:240px}span.mvp-nav-soc-head{float:right;font-size:10px;font-weight:600;line-height:1;margin-right:10px;padding:20px 0;text-transform:uppercase}span.mvp-nav-search-but{font-size:20px;line-height:1;padding:15px 0}span.mvp-nav-soc-but{float:right;font-size:20px;line-height:1;padding:15px 8px}#mvp-search-wrap{-webkit-backface-visibility:hidden;backface-visibility:hidden;background:rgba(255,255,255,.94);opacity:0;position:fixed;top:0;left:0;-webkit-transform:translate3d(0,-100%,0);-moz-transform:translate3d(0,-100%,0);-ms-transform:translate3d(0,-100%,0);-o-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0);width:100%;height:100%;z-index:999999}#mvp-search-box{margin:-60px 0 0 -300px;position:absolute;top:50%;left:50%;width:600px}#searchform input{background:none;border:0;border-bottom:1px solid #444;color:#444;float:left;font-size:70px;font-weight:400;line-height:100%;padding:20px 0;width:100%;height:70px}#searchform #searchsubmit{border:none;float:left}#mvp-main-wrap{margin-top:94px;width:100%}#mvp-leader-wrap{margin:15px 0 -5px;width:100%}#mvp-leader-cont{line-height:0;text-align:center;width:100%}#mvp-main-body-wrap{margin-top:20px;width:100%}#mvp-main-body{width:100%}#mvp-bot-nav-wrap{width:100%;height:44px}#mvp-bot-nav-cont{width:100%}.mvp-bot-nav-out{float:right;margin-left:-60px;width:100%}.mvp-bot-nav-in{margin-left:60px}#mvp-nav-menu{width:100%;height:44px}#mvp-nav-menu ul,#mvp-nav-menu ul li{float:left}#mvp-nav-menu ul{width:100%}#mvp-nav-menu ul li{position:relative}#mvp-nav-menu ul li a{float:left;font-size:16px;font-weight:700;line-height:1;padding:14px 12px;position:relative;text-transform:uppercase}#mvp-nav-menu ul li.menu-item-has-children ul.sub-menu li a:after,#mvp-nav-menu ul li.menu-item-has-children ul.sub-menu li ul.sub-menu li a:after{border-style:none;border-width:medium;content:'';position:relative;top:auto;right:auto}#mvp-nav-menu ul li.menu-item-has-children a:after{border-style:solid;border-width:3px 3px 0 3px;content:'';position:absolute;top:21px;right:10px}#mvp-nav-menu ul li.menu-item-has-children a{padding:14px 18px 14px 12px}#mvp-nav-menu ul li ul.sub-menu{background:#fff;-webkit-box-shadow:-1px 2px 5px 0 rgba(0,0,0,0.2);-moz-box-shadow:-1px 2px 5px 0 rgba(0,0,0,0.2);-ms-box-shadow:-1px 2px 5px 0 rgba(0,0,0,0.2);-o-box-shadow:-1px 2px 5px 0 rgba(0,0,0,0.2);box-shadow:0 1px 6px 0 rgba(0,0,0,0.2);position:absolute;top:44px;left:0;max-width:200px;-webkit-transform:translateY(-999px);-moz-transform:translateY(-999px);-ms-transform:translateY(-999px);-o-transform:translateY(-999px);transform:translateY(-999px);width:auto;z-index:-1}#mvp-nav-menu ul li ul.sub-menu li{display:block;float:left;position:relative;width:100%}#mvp-nav-menu ul li ul.sub-menu li a{background:#fff;border-top:1px solid rgba(0,0,0,.1);border-bottom:none;color:#444!important;float:left;font-size:13px;line-height:1.15;padding:12px 20px!important;text-transform:uppercase;width:160px}#mvp-nav-menu ul li ul.sub-menu li ul{display:none;position:absolute;top:0;left:200px;z-index:10}#mvp-fly-wrap{overflow:hidden;position:fixed;top:0;bottom:0;left:0;-webkit-transform:translate3d(-370px,0,0);-moz-transform:translate3d(-370px,0,0);-ms-transform:translate3d(-370px,0,0);-o-transform:translate3d(-370px,0,0);transform:translate3d(-370px,0,0);width:370px;height:100%;z-index:999999}.mvp-fly-but-wrap,.mvp-search-but-wrap{width:30px;height:44px}.mvp-search-but-wrap{position:absolute;top:60px;right:80px;width:60px}.mvp-fly-but-wrap span,.mvp-search-but-wrap span{display:block;position:absolute;left:0;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-ms-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);height:3px}.mvp-search-but-wrap span{background:#333;top:24px}.mvp-fly-but-wrap span:nth-child(1){top:12.5px;width:30px}.mvp-fly-but-wrap span:nth-child(2),.mvp-fly-but-wrap span:nth-child(3){top:20.5px;width:24px}.mvp-fly-but-wrap span:nth-child(4){top:28.5px;width:18px}.mvp-search-but-wrap span:nth-child(1){-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg);width:30px}.mvp-search-but-wrap span:nth-child(2){-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg);width:30px}.mvp-search-but-wrap span:nth-child(1),.mvp-search-but-wrap span:nth-child(2){width:60px}#mvp-fly-menu-top{width:100%;height:60px}.mvp-fly-top-out{margin-right:-120px;left:60px;width:100%}.mvp-fly-top-in{margin-right:120px}#mvp-fly-logo{margin:0 6.45161290323%;text-align:center;width:87.0967741935%}#mvp-fly-logo img{line-height:0}.mvp-fly-but-menu{float:left;margin-left:15px;position:relative}#mvp-fly-menu-wrap{overflow:hidden;position:absolute;top:60px;left:0;width:100%;height:100%}nav.mvp-fly-nav-menu{-webkit-backface-visibility:hidden;backface-visibility:hidden;margin:20px 5.40540540541% 0;overflow:hidden;position:absolute!important;width:89.1891891892%;max-height:65%}nav.mvp-fly-nav-menu ul{float:left;position:relative;width:100%}nav.mvp-fly-nav-menu ul li{border-top:1px solid rgba(0,0,0,.1);float:left;position:relative;width:100%}nav.mvp-fly-nav-menu ul li:first-child{border-top:none;margin-top:-14px}nav.mvp-fly-nav-menu ul li ul li:first-child{margin-top:0}nav.mvp-fly-nav-menu ul li a{display:inline-block;float:left;font-size:16px;font-weight:700;line-height:1;padding:14px 0;text-transform:uppercase}nav.mvp-fly-nav-menu ul li.menu-item-has-children:after{content:'+';font-family:'Open Sans',sans-serif;font-size:32px;font-weight:700;position:absolute;right:0;top:7px}nav.mvp-fly-nav-menu ul li ul.sub-menu{border-top:1px solid rgba(0,0,0,.1);display:none;float:left;padding-left:6.66666666666%;width:93.333333333%}.mvp-fly-fade{background:#222;opacity:0;width:100%;position:fixed;top:0;left:0;z-index:99999}#mvp-fly-soc-wrap{margin:0 5.40540540541%;position:absolute;bottom:20px;left:0;text-align:center;width:89.1891891892%}span.mvp-fly-soc-head{display:inline-block;font-family:'Lato',sans-serif;font-size:.65rem;font-weight:400;line-height:1;margin-bottom:15px;text-transform:uppercase}ul.mvp-fly-soc-list{text-align:center;width:100%}ul.mvp-fly-soc-list li{display:inline-block}ul.mvp-fly-soc-list li a{-webkit-border-radius:50%;-moz-border-radius:50%;-ms-border-radius:50%;-o-border-radius:50%;border-radius:50%;display:inline-block;font-size:12px;line-height:1;margin-left:2px;padding-top:10px;text-align:center;width:32px;height:22px}ul.mvp-fly-soc-list li:first-child a{margin-left:0}.mvp-sec-pad{background:#fff;border-bottom:1px solid #bbb;padding:30px 2.5%;width:95%}#mvp-side-wrap{float:right;margin-left:50px;width:330px}.mvp-side-widget{float:left;margin-bottom:30px;position:relative;width:100%}.mvp-widget-ad{float:left;line-height:0;text-align:center;width:100%}.mvp-ad-label{color:#aaa;display:none;font-family:'Lato',sans-serif;font-size:.65rem;font-weight:400;letter-spacing:.1em;line-height:1;position:relative;top:-10px;text-transform:uppercase}#mvp-side-wrap .mvp-ad-label{display:inline-block}#mvp-side-wrap .mvp-widget-ad{margin-bottom:30px}.mvp-side-tab-wrap{width:100%}.mvp-side-tab-top{background:#eee;margin-bottom:15px;width:100%}ul.mvp-side-tab-list{float:left;margin:10px 2.777777777% 0;width:94.4444444444%}ul.mvp-side-tab-list li,ul.mvp-side-tab-list li a{color:#222;float:left}ul.mvp-side-tab-list li a{opacity:.5}ul.mvp-side-tab-list li span.mvp-side-tab-head{float:left;font-size:.8rem;font-weight:700;padding:12px 16px;text-transform:uppercase}ul.mvp-side-tab-list li span.mvp-side-tab-head i{font-size:.75rem;margin-right:2px}ul.mvp-side-tab-list li.active a{background:#fff;opacity:1}.mvp-side-tab-main{width:100%}.mvp-side-tab-story{margin-top:15px;width:100%}.mvp-side-tab-story:first-child{margin-top:0}.mvp-side-tab-out{float:right;margin-left:-95px;width:100%}.mvp-side-tab-in{margin-left:95px}.mvp-side-tab-img{line-height:0;margin-right:15px;width:80px}.mvp-side-tab-img:after{content:'';border-top:10px solid transparent;border-bottom:10px solid transparent;border-right:10px solid #fff;margin-top:-10px;position:absolute;right:0;top:50%;width:0;height:0}.mvp-side-tab-text{width:100%}.mvp-side-tab-text h3{color:#555;font-size:.7rem;font-weight:400;letter-spacing:.07rem;line-height:1;margin-bottom:5px;text-transform:uppercase;width:100%}.mvp-side-tab-text h2 a{color:#111;font-size:1.15rem;font-weight:700;letter-spacing:-.02em;line-height:1.1;width:100%}#mvp-side-wrap a{color:#111!important;font-weight:700;line-height:1.1}#mvp-article-wrap{background:#fff;float:left;margin-bottom:30px;position:relative;width:100%}#mvp-article-head2{margin-bottom:30px;width:100%}h1.mvp-post-title{color:#333;font-size:3.5rem;font-weight:900;letter-spacing:-.02em;line-height:1.1;margin-bottom:10px;width:100%}#mvp-article-head2 h1.mvp-post-title{font-size:3.1rem}.page h1.mvp-post-title{font-size:2rem;margin-bottom:30px;text-align:center}.mvp-post-content-out{float:left;margin-right:-380px;width:100%}.mvp-post-content-in{margin-right:380px}#mvp-post-content{width:100%}.mvp-post-soc-out{float:right;margin-left:-72px;width:100%}.mvp-post-soc-in{margin-left:72px}#mvp-post-soc-wrap{margin-right:30px;width:42px}ul.mvp-post-soc-list{width:100%}ul.mvp-post-soc-list li{-webkit-border-radius:50%;-moz-border-radius:50%;-ms-border-radius:50%;-o-border-radius:50%;border-radius:50%;color:#fff;float:left;font-size:18px;line-height:1;margin-bottom:10px;padding-top:11px;position:relative;text-align:center;width:42px;height:31px}ul.mvp-post-soc-list li.mvp-post-soc-fb{background:#3b5998}ul.mvp-post-soc-list li.mvp-post-soc-twit{background:#55acee}ul.mvp-post-soc-list li.mvp-post-soc-pin{background:#bd081c}ul.mvp-post-soc-list li.mvp-post-soc-email{background:#bbb}#mvp-content-main{overflow:hidden;width:100%}#mvp-content-main p{color:#444;display:block;font-size:1.15rem;font-weight:400;line-height:1.5;margin-bottom:15px}#mvp-content-main h5{font-weight:700;line-height:120%;margin:10px 0;overflow:hidden;width:100%}#mvp-content-main h5{font-size:1.2rem}#mvp-content-main table{font-size:.9rem;width:100%}#mvp-content-main thead{background:#ccc}#mvp-content-main tbody tr{background:#eee}#mvp-content-main td,#mvp-content-main th{padding:5px 1.5%}.mvp-org-wrap{display:none}@media screen and (max-width:599px) and (min-width:480px){h1.mvp-post-title,#mvp-article-head2 h1.mvp-post-title{font-size:1.9rem}}@media screen and (max-width:479px){h1.mvp-post-title,#mvp-article-head2 h1.mvp-post-title{font-size:1.6rem!important;line-height:1.3}}h1.mvp-post-title{color:#333;font-size:2.0rem!important;font-weight:900;letter-spacing:-.02em;line-height:1.1;margin-bottom:10px;width:100%}#mvp-content-main tbody tr{background:#fff}.goog-ad-home-mid{text-align:center!important;margin:20px 0 20px 0;width:100%}table.ros{border:none;border-collapse:collapse;width:100%;margin-bottom:25px}table.ros td{border-bottom:1px solid #ccc;padding:4px 0 4px 5px!important}table.ros th{border-bottom:1px solid #ccc;background-color:#c00;font-size:14px;padding:8px 3px 8px 3px!important}.ros1{font:bold 13px 'Open Sans',arial,helvetica,sans-serif;background-color:#fff;text-align:left;color:#000}.ros1 a:link,.ros1 a:visited{color:#000;text-decoration:none;font-weight:bold}.ros2{font:13px 'Open Sans',arial,helvetica,sans-serif;text-align:left;background-color:#fff}.ros3{font:13px 'Open Sans',arial,helvetica,sans-serif;background-color:#fff;padding:4px 0 4px 0;text-align:center}th.schgry1,th.schgry3{text-align:left}th.schgry2{text-align:center}th.schgry1,th.schgry2,th.schgry3{font:bold 13px 'Open Sans',arial,helvetica,sans-serif;color:#fff;background-color:#c00;padding:2px 0 2px 5px!important}@media only screen and (max-width:480px){.ros2{display:none}th.schgry3{display:none}}@media only screen and (min-width:768px) and (max-width:900px){.ros2{display:none}th.schgry3{display:none}}html,body,div,span,iframe,h1,h2,h3,h5,p,a,img,ins,strong,i,ul,li,form,table,tbody,thead,tr,th,td,article,header,nav,section{margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline}article,header,main,nav,section{display:block}body{line-height:1}ul{list-style:none}table{border-collapse:collapse;border-spacing:0}@media screen and (max-width:1260px) and (min-width:1201px){#mvp-top-nav-wrap .mvp-main-box-cont,#mvp-bot-nav-wrap .mvp-main-box-cont{width:100%}#mvp-top-nav-wrap,#mvp-bot-nav-wrap{padding:0 2.727272727272%;width:94.5454545454%}}@media screen and (max-width:1217px) and (min-width:1101px){.mvp-main-box-cont{width:100%}#mvp-top-nav-wrap,#mvp-bot-nav-wrap{padding:0 2.727272727272%;width:94.5454545454%}}@media screen and (max-width:1100px) and (min-width:1004px){.mvp-main-box-cont{width:100%}#mvp-top-nav-wrap,#mvp-bot-nav-wrap{padding:0 3%;width:94%}.mvp-sec-pad{padding:30px 3%;width:94%}h1.mvp-post-title{font-size:3.2rem}.mvp-post-content-out{margin-right:-360px}.mvp-post-content-in{margin-right:360px}}@media screen and (max-width:1003px) and (min-width:900px){#mvp-bot-nav-wrap{display:none}.mvp-top-nav-menu-but{display:inline}.mvp-main-box-cont{width:100%}#mvp-top-nav-cont{border-bottom:none}#mvp-top-nav-wrap{padding:0 2.222222222%;width:95.555555555%}#mvp-main-wrap{margin-top:50px}.mvp-sec-pad{padding:20px 2.2222222222%;width:95.555555555%}#mvp-side-wrap{margin-left:30px}h1.mvp-post-title{font-size:2.9rem}.mvp-post-content-out{margin-right:-360px}.mvp-post-content-in{margin-right:360px}#mvp-post-soc-wrap{margin-right:20px}.mvp-post-soc-out{margin-left:-62px}.mvp-post-soc-in{margin-left:62px}#mvp-article-head2 h1.mvp-post-title{font-size:2.6rem}}@media screen and (max-width:899px) and (min-width:768px){#mvp-bot-nav-wrap{display:none}.mvp-top-nav-menu-but{display:inline}.mvp-main-box-cont{width:100%}#mvp-top-nav-cont{border-bottom:none}#mvp-top-nav-wrap{padding:0 2.60416666666%;width:94.7916666666%}#mvp-main-wrap{margin-top:50px}.mvp-side-widget{margin-bottom:20px}.mvp-sec-pad{padding:20px 2.60416666666%;width:94.79166666666%}#mvp-side-wrap{border-top:1px solid #ddd;margin-top:20px;margin-left:0;padding-top:20px;width:100%}h1.mvp-post-title,#mvp-article-head2 h1.mvp-post-title{font-size:2.8rem}.mvp-post-content-out,.mvp-post-content-in{margin-right:0!important}#mvp-post-soc-wrap{margin-right:20px}.mvp-post-soc-out{margin-left:-62px}.mvp-post-soc-in{margin-left:62px}}@media screen and (max-width:767px) and (min-width:660px){#mvp-bot-nav-wrap{display:none}.mvp-top-nav-menu-but{display:inline}.mvp-main-box-cont{width:100%}#mvp-top-nav-cont{border-bottom:none}#mvp-top-nav-wrap{padding:0 3.030303030303%;width:93.939393939393%}#mvp-main-wrap{margin-top:50px}.mvp-side-widget{margin-bottom:20px}.mvp-sec-pad{padding:20px 3.0303030303%;width:93.9393939393%}#mvp-side-wrap{border-top:1px solid #ddd;margin-top:20px;margin-left:0;padding-top:20px;width:100%}h1.mvp-post-title,#mvp-article-head2 h1.mvp-post-title{font-size:2.7rem}.mvp-post-content-out,.mvp-post-content-in{margin-right:0!important}#mvp-post-soc-wrap{margin-right:20px}.mvp-post-soc-out{margin-left:-62px}.mvp-post-soc-in{margin-left:62px}.mvp-search-but-wrap{top:40px;right:50px}#mvp-search-box{margin:-60px 0 0 -200px;top:40%;width:400px}#searchform input{font-size:50px;height:50px;padding:15px 0}}@media screen and (max-width:659px) and (min-width:600px){#mvp-bot-nav-wrap{display:none}.mvp-top-nav-menu-but{display:inline}.mvp-main-box-cont,#mvp-bot-nav-wrap{width:100%}#mvp-top-nav-cont{border-bottom:none}#mvp-top-nav-wrap{padding:0 3.33333333333%;width:93.3333333333%}#mvp-main-wrap{margin-top:50px}.mvp-side-widget{margin-bottom:20px}.mvp-sec-pad{padding:20px 3.3333333333%;width:93.3333333333%}#mvp-side-wrap{border-top:1px solid #ddd;margin-top:20px;margin-left:0;padding-top:20px;width:100%}h1.mvp-post-title,#mvp-article-head2 h1.mvp-post-title{font-size:2.6rem}.mvp-post-content-out,.mvp-post-content-in{margin-right:0!important}#mvp-post-soc-wrap{margin-right:20px}.mvp-post-soc-out{margin-left:-62px}.mvp-post-soc-in{margin-left:62px}.mvp-search-but-wrap{top:40px;right:50px}#mvp-search-box{margin:-60px 0 0 -200px;top:40%;width:400px}#searchform input{font-size:50px;height:50px;padding:15px 0}}@media screen and (max-width:599px) and (min-width:480px){#mvp-bot-nav-wrap,#mvp-top-nav-soc,#mvp-post-soc-wrap{display:none}.mvp-top-nav-menu-but{display:inline}.mvp-main-box-cont{width:100%}#mvp-top-nav-cont{border-bottom:none}#mvp-top-nav-wrap{padding:0 4.1666666666%;width:91.666666666%}.mvp-top-nav-right-out{margin-right:-50px}.mvp-top-nav-right-in{margin-right:50px}#mvp-top-nav-right{width:50px}.mvp-top-nav-left-out{margin-left:-50px}.mvp-top-nav-left-in{margin-left:50px}#mvp-top-nav-logo{text-align:center;width:100%}.mvp-top-nav-menu-but{margin-right:0}#mvp-leader-wrap{margin-top:5px}#mvp-main-body-wrap{margin-top:10px}#mvp-main-wrap{margin-top:50px}.mvp-side-widget{margin-bottom:20px}.mvp-sec-pad{padding:20px 4.1666666666%;width:91.666666666%}#mvp-article-head2{margin-bottom:20px}#mvp-side-wrap{border-top:1px solid #ddd;margin-top:20px;margin-left:0;padding-top:20px;width:100%}h1.mvp-post-title,#mvp-article-head2 h1.mvp-post-title{font-size:1.9rem}.mvp-post-content-out,.mvp-post-content-in{margin-right:0!important}#mvp-post-soc-wrap{margin-right:20px}.mvp-post-soc-out,.mvp-post-soc-in{margin-left:0}.mvp-search-but-wrap{top:40px;right:50px}#mvp-search-box{margin:-40px 0 0 -200px;top:50%;width:400px}#searchform input{font-size:50px;height:50px;padding:15px 0}}@media screen and (max-width:479px){#mvp-bot-nav-wrap,#mvp-top-nav-soc,#mvp-post-soc-wrap{display:none}.mvp-top-nav-menu-but{display:inline}.mvp-main-box-cont{width:100%}#mvp-top-nav-cont{border-bottom:none}#mvp-top-nav-wrap{padding:0 4.166666666666%;width:91.6666666666%}.mvp-top-nav-right-out{margin-right:-45px}.mvp-top-nav-right-in{margin-right:45px}#mvp-top-nav-right{width:45px}.mvp-top-nav-left-out{margin-left:-45px}.mvp-top-nav-left-in{margin-left:45px}#mvp-top-nav-logo{text-align:center;width:100%}.mvp-top-nav-menu-but{margin-right:0}#mvp-main-wrap{margin-top:50px}#mvp-leader-wrap{margin-top:5px}#mvp-main-body-wrap{margin-top:10px}.mvp-side-widget{margin-bottom:15px}.mvp-sec-pad{padding:15px 4.1666666666%;width:91.666666666%}#mvp-article-head2{margin-bottom:20px}#mvp-side-wrap{border-top:1px solid #ddd;margin-top:15px;margin-left:0;padding-top:15px;width:100%}h1.mvp-post-title,#mvp-article-head2 h1.mvp-post-title{font-size:1.8rem}.mvp-post-content-out,.mvp-post-content-in{margin-right:0!important}#mvp-post-soc-wrap{margin-right:20px}.mvp-post-soc-out,.mvp-post-soc-in{margin-left:0}.mvp-search-but-wrap{top:20px;right:30px}#mvp-search-box{margin:-40px 0 0 -150px;top:50%;width:300px}#searchform input{font-size:30px;height:30px;padding:15px 0}.page h1.mvp-post-title{margin-bottom:20px}}</style>
+	<meta name="description" content="View the complete UGA football roster for the 2022 season at SicEmDawgs.com. A printable roster is also available." />
+	<link rel="canonical" href="https://www.sicemdawgs.com/uga-football-roster/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="UGA Football Roster | SicEmDawgs.com" />
+	<meta property="og:description" content="View the complete UGA football roster for the 2022 season at SicEmDawgs.com. A printable roster is also available." />
+	<meta property="og:url" content="https://www.sicemdawgs.com/uga-football-roster/" />
+	<meta property="og:site_name" content="SicEmDawgs.com" />
+	<meta property="article:publisher" content="http://www.facebook.com/sicemdawgscom" />
+	<meta property="article:modified_time" content="2022-03-17T21:19:57+00:00" />
+	<meta property="og:image" content="https://www.sicemdawgs.com/wp/wp-content/uploads/2014/07/sicem-fb-2014-1.png" />
+	<meta property="og:image:width" content="800" />
+	<meta property="og:image:height" content="500" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="7 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.sicemdawgs.com/#organization","name":"SicEmDawgs.com","url":"https://www.sicemdawgs.com/","sameAs":["http://www.facebook.com/sicemdawgscom","https://instagram.com/sicemdawgscom","https://twitter.com/sicemdawgscom"],"logo":{"@type":"ImageObject","@id":"https://www.sicemdawgs.com/#logo","inLanguage":"en-US","url":"https://www.sicemdawgs.com/wp/wp-content/uploads/2014/07/sicem-fb-2014-1.png","contentUrl":"https://www.sicemdawgs.com/wp/wp-content/uploads/2014/07/sicem-fb-2014-1.png","width":800,"height":500,"caption":"SicEmDawgs.com"},"image":{"@id":"https://www.sicemdawgs.com/#logo"}},{"@type":"WebSite","@id":"https://www.sicemdawgs.com/#website","url":"https://www.sicemdawgs.com/","name":"SicEmDawgs.com","description":"Georgia Bulldogs Football, Basketball &amp; Recruiting | UGA | Dawgs","publisher":{"@id":"https://www.sicemdawgs.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.sicemdawgs.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://www.sicemdawgs.com/uga-football-roster/#primaryimage","inLanguage":"en-US","url":"https://www.sicemdawgs.com/wp/wp-content/uploads/2014/07/sicem-fb-2014-1.png","contentUrl":"https://www.sicemdawgs.com/wp/wp-content/uploads/2014/07/sicem-fb-2014-1.png","width":800,"height":500,"caption":"SicEmDawgs.com"},{"@type":"WebPage","@id":"https://www.sicemdawgs.com/uga-football-roster/#webpage","url":"https://www.sicemdawgs.com/uga-football-roster/","name":"UGA Football Roster | Georgia Bulldogs | SicEmDawgs.com","isPartOf":{"@id":"https://www.sicemdawgs.com/#website"},"primaryImageOfPage":{"@id":"https://www.sicemdawgs.com/uga-football-roster/#primaryimage"},"datePublished":"2013-01-08T21:02:44+00:00","dateModified":"2022-03-17T21:19:57+00:00","description":"View the complete UGA football roster for the 2022 season at SicEmDawgs.com. A printable roster is also available.","breadcrumb":{"@id":"https://www.sicemdawgs.com/uga-football-roster/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.sicemdawgs.com/uga-football-roster/"]}]},{"@type":"BreadcrumbList","@id":"https://www.sicemdawgs.com/uga-football-roster/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.sicemdawgs.com/"},{"@type":"ListItem","position":2,"name":"UGA Football Roster"}]}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="SicEmDawgs.com &raquo; Feed" href="https://www.sicemdawgs.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="SicEmDawgs.com &raquo; Comments Feed" href="https://www.sicemdawgs.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="SicEmDawgs.com &raquo; UGA Football Roster Comments Feed" href="https://www.sicemdawgs.com/uga-football-roster/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='preload'   href='https://www.sicemdawgs.com/wp/wp-includes/css/dist/block-library/style.min.css?ver=5.9.2' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link data-minify="1" rel='preload'   href='https://www.sicemdawgs.com/wp/wp-content/cache/min/1/wp/wp-content/themes/the-league/style.css?ver=1647485199' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<style id='mvp-custom-style-inline-css' type='text/css'>
+
+
+#mvp-wallpaper {
+	background: url() no-repeat 50% 0;
+	}
+
+a,
+a:visited,
+.post-info-name a,
+ul.mvp-author-info-list li.mvp-author-info-name span a,
+.woocommerce .woocommerce-breadcrumb a {
+	color: #c3002f;
+	}
+
+#mvp-comments-button a,
+#mvp-comments-button span.mvp-comment-but-text,
+a.mvp-inf-more-but,
+.sp-template a,
+.sp-data-table a {
+	color: #c3002f !important;
+	}
+
+#mvp-comments-button a:hover,
+#mvp-comments-button span.mvp-comment-but-text:hover,
+a.mvp-inf-more-but:hover {
+	border: 1px solid #c3002f;
+	color: #c3002f !important;
+	}
+
+a:hover,
+.mvp-feat4-sub-text h2 a:hover,
+span.mvp-widget-head-link a,
+.mvp-widget-list-text1 h2 a:hover,
+.mvp-blog-story-text h2 a:hover,
+.mvp-side-tab-text h2 a:hover,
+.mvp-more-post-text h2 a:hover,
+span.mvp-blog-story-author a,
+.woocommerce .woocommerce-breadcrumb a:hover,
+#mvp-side-wrap a:hover,
+.mvp-post-info-top h3 a:hover,
+#mvp-side-wrap .mvp-widget-feat-text h3 a:hover,
+.mvp-widget-author-text h3 a:hover,
+#mvp-side-wrap .mvp-widget-author-text h3 a:hover,
+.mvp-feat5-text h2 a:hover {
+	color: #999999 !important;
+	}
+
+#mvp-main-nav-wrap,
+#mvp-fly-wrap,
+ul.mvp-fly-soc-list li a:hover {
+	background: #c3002f;
+	}
+
+ul.mvp-fly-soc-list li a {
+	color: #c3002f !important;
+	}
+
+#mvp-nav-menu ul li a,
+span.mvp-nav-soc-head,
+span.mvp-nav-search-but,
+span.mvp-nav-soc-but,
+nav.mvp-fly-nav-menu ul li.menu-item-has-children:after,
+nav.mvp-fly-nav-menu ul li.menu-item-has-children.tog-minus:after,
+nav.mvp-fly-nav-menu ul li a,
+span.mvp-fly-soc-head {
+	color: #ffffff;
+	}
+
+ul.mvp-fly-soc-list li a:hover {
+	color: #ffffff !important;
+	}
+
+.mvp-fly-but-wrap span,
+ul.mvp-fly-soc-list li a {
+	background: #ffffff;
+	}
+
+ul.mvp-fly-soc-list li a:hover {
+	border: 2px solid #ffffff;
+	}
+
+#mvp-nav-menu ul li.menu-item-has-children ul.sub-menu li a:after,
+#mvp-nav-menu ul li.menu-item-has-children ul.sub-menu li ul.sub-menu li a:after,
+#mvp-nav-menu ul li.menu-item-has-children ul.sub-menu li ul.sub-menu li ul.sub-menu li a:after,
+#mvp-nav-menu ul li.menu-item-has-children ul.mvp-mega-list li a:after,
+#mvp-nav-menu ul li.menu-item-has-children a:after {
+	border-color: #ffffff transparent transparent transparent;
+	}
+
+#mvp-nav-menu ul li:hover a,
+span.mvp-nav-search-but:hover,
+span.mvp-nav-soc-but:hover,
+#mvp-nav-menu ul li ul.mvp-mega-list li a:hover,
+nav.mvp-fly-nav-menu ul li a:hover {
+	color: #000000 !important;
+	}
+
+#mvp-nav-menu ul li:hover a {
+	border-bottom: 1px solid #000000;
+	}
+
+.mvp-fly-but-wrap:hover span {
+	background: #000000;
+	}
+
+#mvp-nav-menu ul li.menu-item-has-children:hover a:after {
+	border-color: #000000 transparent transparent transparent !important;
+	}
+
+ul.mvp-score-list li:hover {
+	border: 1px solid #c3002f;
+	}
+
+.es-nav span:hover a,
+ul.mvp-side-tab-list li span.mvp-side-tab-head i {
+	color: #c3002f;
+	}
+
+span.mvp-feat1-cat,
+.mvp-vid-box-wrap,
+span.mvp-post-cat,
+.mvp-prev-next-text a,
+.mvp-prev-next-text a:visited,
+.mvp-prev-next-text a:hover,
+.mvp-mob-soc-share-but,
+.mvp-scores-status,
+.sportspress h1.mvp-post-title .sp-player-number {
+	background: #c3002f;
+	}
+
+.sp-table-caption {
+	background: #c3002f !important;
+	}
+
+.woocommerce .star-rating span:before,
+.woocommerce-message:before,
+.woocommerce-info:before,
+.woocommerce-message:before {
+	color: #c3002f;
+	}
+
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
+.woocommerce span.onsale,
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover {
+	background-color: #c3002f;
+	}
+
+span.mvp-sec-head,
+.mvp-authors-name {
+	border-bottom: 1px solid #c3002f;
+	}
+
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+	border-top-color: #c3002f;
+	}
+
+#mvp-nav-menu ul li a,
+nav.mvp-fly-nav-menu ul li a,
+#mvp-foot-nav ul.menu li a,
+#mvp-foot-menu ul.menu li a {
+	font-family: 'Open Sans', sans-serif;
+	}
+
+body,
+.mvp-feat1-text p,
+.mvp-feat4-main-text p,
+.mvp-feat2-main-text p,
+.mvp-feat3-main-text p,
+.mvp-feat4-sub-text p,
+.mvp-widget-list-text1 p,
+.mvp-blog-story-text p,
+.mvp-blog-story-info,
+span.mvp-post-excerpt,
+ul.mvp-author-info-list li.mvp-author-info-name p,
+ul.mvp-author-info-list li.mvp-author-info-name span,
+.mvp-post-date,
+span.mvp-feat-caption,
+span.mvp-feat-caption-wide,
+#mvp-content-main p,
+#mvp-author-box-text p,
+.mvp-more-post-text p,
+#mvp-404 p,
+#mvp-foot-copy,
+#searchform input,
+span.mvp-author-page-desc,
+#woo-content p,
+.mvp-search-text p,
+#comments .c p,
+.mvp-widget-feat-text p,
+.mvp-feat5-text p {
+	font-family: 'Open Sans', sans-serif;
+	}
+
+span.mvp-nav-soc-head,
+.mvp-score-status p,
+.mvp-score-teams p,
+.mvp-scores-status p,
+.mvp-scores-teams p,
+ul.mvp-feat2-list li h3,
+.mvp-feat4-sub-text h3,
+.mvp-widget-head-wrap h4,
+span.mvp-widget-head-link,
+.mvp-widget-list-text1 h3,
+.mvp-blog-story-text h3,
+ul.mvp-side-tab-list li span.mvp-side-tab-head,
+.mvp-side-tab-text h3,
+span.mvp-post-cat,
+.mvp-post-tags,
+span.mvp-author-box-name,
+#mvp-comments-button a,
+#mvp-comments-button span.mvp-comment-but-text,
+span.mvp-sec-head,
+a.mvp-inf-more-but,
+.pagination span, .pagination a,
+.woocommerce ul.product_list_widget span.product-title,
+.woocommerce ul.product_list_widget li a,
+.woocommerce #reviews #comments ol.commentlist li .comment-text p.meta,
+.woocommerce .related h2,
+.woocommerce div.product .woocommerce-tabs .panel h2,
+.woocommerce div.product .product_title,
+#mvp-content-main h1,
+#mvp-content-main h2,
+#mvp-content-main h3,
+#mvp-content-main h4,
+#mvp-content-main h5,
+#mvp-content-main h6,
+#woo-content h1.page-title,
+.woocommerce .woocommerce-breadcrumb,
+.mvp-authors-name,
+#respond #submit,
+.comment-reply a,
+#cancel-comment-reply-link,
+span.mvp-feat1-cat,
+span.mvp-post-info-date,
+.mvp-widget-feat-text h3,
+.mvp-widget-author-text h3 a,
+.sp-table-caption {
+	font-family: 'Open Sans', sans-serif !important;
+	}
+
+.mvp-feat1-text h2,
+.mvp-feat1-text h2.mvp-stand-title,
+.mvp-feat4-main-text h2,
+.mvp-feat4-main-text h2.mvp-stand-title,
+.mvp-feat1-sub-text h2,
+.mvp-feat2-main-text h2,
+.mvp-feat2-sub-text h2,
+ul.mvp-feat2-list li h2,
+.mvp-feat3-main-text h2,
+.mvp-feat3-sub-text h2,
+.mvp-feat4-sub-text h2 a,
+.mvp-widget-list-text1 h2 a,
+.mvp-blog-story-text h2 a,
+.mvp-side-tab-text h2 a,
+#mvp-content-main blockquote p,
+.mvp-more-post-text h2 a,
+h2.mvp-authors-latest a,
+.mvp-widget-feat-text h2 a,
+.mvp-widget-author-text h2 a,
+.mvp-feat5-text h2 a,
+.mvp-scores-title h2 a {
+	font-family: 'Open Sans', sans-serif;
+	}
+
+h1.mvp-post-title,
+.mvp-cat-head h1,
+#mvp-404 h1,
+h1.mvp-author-top-head,
+#woo-content h1.page-title,
+.woocommerce div.product .product_title,
+.woocommerce ul.products li.product h3 {
+	font-family: 'Open Sans', sans-serif;
+	}
+
+	
+
+	.mvp-nav-links {
+		display: none;
+		}
+		
+</style>
+<link data-minify="1" rel='preload'   href='https://www.sicemdawgs.com/wp/wp-content/cache/min/1/wp/wp-content/themes/the-league-child/font-awesome/css/font-awesome.css?ver=1647485199' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'   href='https://www.sicemdawgs.com/wp/wp-content/cache/min/1/wp/wp-content/themes/the-league-child/style.css?ver=1647485200' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'   href='https://www.sicemdawgs.com/wp/wp-content/cache/min/1/wp/wp-content/themes/the-league/css/reset.css?ver=1647485200' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'   href='https://www.sicemdawgs.com/wp/wp-content/cache/min/1/wp/wp-content/themes/the-league-child/font-awesome/css/font-awesome.css?ver=1647485199' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link rel='preload'   href='//fonts.googleapis.com/css?family=Advent+Pro%3A700%7CRoboto%3A300%2C400%2C500%2C700%2C900%7COswald%3A300%2C400%2C700%7CLato%3A300%2C400%2C700%7CWork+Sans%3A200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7COpen+Sans%3A400%2C700%2C800%7COpen+Sans%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7COpen+Sans%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7COpen+Sans%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7COpen+Sans%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7COpen+Sans%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900&#038;subset=latin,latin-ext,cyrillic,cyrillic-ext,greek-ext,greek,vietnamese' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'   href='https://www.sicemdawgs.com/wp/wp-content/cache/min/1/wp/wp-content/themes/the-league/css/media-queries.css?ver=1647485200' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<script type='text/javascript' src='https://www.sicemdawgs.com/wp/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://www.sicemdawgs.com/wp/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<link rel="https://api.w.org/" href="https://www.sicemdawgs.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.sicemdawgs.com/wp-json/wp/v2/pages/227" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.sicemdawgs.com/wp/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.sicemdawgs.com/wp/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.9.2" />
+<link rel='shortlink' href='https://www.sicemdawgs.com/?p=227' />
+<link rel="alternate" type="application/json+oembed" href="https://www.sicemdawgs.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sicemdawgs.com%2Fuga-football-roster%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.sicemdawgs.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sicemdawgs.com%2Fuga-football-roster%2F&#038;format=xml" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6292152639364487",
+    enable_page_level_ads: true,
+    overlays: {bottom: true}
+  });
+</script>
+<style type="text/css">
+.adslot_1 { width: 320px; height: 100px; }
+@media (min-width:500px) { .adslot_1 { width: 468px; height: 60px; } }
+@media (min-width:800px) { .adslot_1 { width: 728px; height: 90px; } }
+</style>
+</head>
+<body class="page-template-default page page-id-227">
+	<div id="mvp-fly-wrap">
+	<div id="mvp-fly-menu-top" class="left relative">
+		<div class="mvp-fly-top-out left relative">
+			<div class="mvp-fly-top-in">
+				<div id="mvp-fly-logo" class="left relative">
+											<a href="https://www.sicemdawgs.com/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="SicEmDawgs.com" data-rjs="2" data-lazy-src="https://www.sicemdawgs.com/wp/wp-content/uploads/2019/11/sicemdawgs-250-50-2019.png" /><noscript><img src="https://www.sicemdawgs.com/wp/wp-content/uploads/2019/11/sicemdawgs-250-50-2019.png" alt="SicEmDawgs.com" data-rjs="2" /></noscript></a>
+									</div><!--mvp-fly-logo-->
+			</div><!--mvp-fly-top-in-->
+			<div class="mvp-fly-but-wrap mvp-fly-but-menu mvp-fly-but-click">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div><!--mvp-fly-but-wrap-->
+		</div><!--mvp-fly-top-out-->
+	</div><!--mvp-fly-menu-top-->
+	<div id="mvp-fly-menu-wrap">
+		<nav class="mvp-fly-nav-menu left relative">
+			<div class="menu-mobile-container"><ul id="menu-mobile" class="menu"><li id="menu-item-18212" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-ancestor current-menu-parent menu-item-has-children menu-item-18212"><a href="https://www.sicemdawgs.com/uga-football/">Football</a>
+<ul class="sub-menu">
+	<li id="menu-item-39943" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39943"><a href="https://www.sicemdawgs.com/2022-uga-football-schedule/">2022 Schedule</a></li>
+	<li id="menu-item-20374" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20374"><a href="https://www.sicemdawgs.com/future-uga-football-schedules/">Future Schedules</a></li>
+	<li id="menu-item-18215" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-227 current_page_item menu-item-18215"><a href="https://www.sicemdawgs.com/uga-football-roster/" aria-current="page">Roster</a></li>
+	<li id="menu-item-18216" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-18216"><a href="https://www.sicemdawgs.com/uga-football-recruiting/">Recruiting</a>
+	<ul class="sub-menu">
+		<li id="menu-item-25247" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25247"><a href="https://www.sicemdawgs.com/uga-football-commitments/">Commitments</a></li>
+		<li id="menu-item-33500" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33500"><a href="https://www.sicemdawgs.com/uga-football-signees/">UGA Football Signees</a></li>
+		<li id="menu-item-26717" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26717"><a href="https://www.sicemdawgs.com/uga-football-signees/">Past Signees</a></li>
+	</ul>
+</li>
+	<li id="menu-item-18217" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18217"><a href="https://www.sicemdawgs.com/uga-football-history/">History</a></li>
+	<li id="menu-item-21569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21569"><a href="https://www.sicemdawgs.com/uga-football-records/">Records</a></li>
+	<li id="menu-item-28117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28117"><a href="https://www.sicemdawgs.com/uga-football-tickets/">Tickets</a></li>
+</ul>
+</li>
+<li id="menu-item-18218" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-18218"><a href="https://www.sicemdawgs.com/uga-basketball/">Basketball</a>
+<ul class="sub-menu">
+	<li id="menu-item-18219" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18219"><a href="https://www.sicemdawgs.com/uga-basketball-schedule/">2021-22 Schedule</a></li>
+	<li id="menu-item-18374" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18374"><a href="https://www.sicemdawgs.com/future-uga-basketball-opponents/">Future Opponents</a></li>
+	<li id="menu-item-18220" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18220"><a href="https://www.sicemdawgs.com/past-uga-basketball-schedules/">Past Schedules</a></li>
+	<li id="menu-item-18221" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18221"><a href="https://www.sicemdawgs.com/uga-basketball-roster/">Roster</a></li>
+	<li id="menu-item-18222" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-18222"><a href="https://www.sicemdawgs.com/uga-basketball-recruiting/">Recruiting</a>
+	<ul class="sub-menu">
+		<li id="menu-item-29920" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29920"><a href="https://www.sicemdawgs.com/uga-basketball-signees/">Commitments &#038; Signees</a></li>
+	</ul>
+</li>
+	<li id="menu-item-18223" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18223"><a href="https://www.sicemdawgs.com/uga-basketball-history/">History</a></li>
+	<li id="menu-item-28118" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28118"><a href="https://www.sicemdawgs.com/uga-football-tickets/">Tickets</a></li>
+</ul>
+</li>
+<li id="menu-item-18224" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-18224"><a href="https://www.sicemdawgs.com/uga-baseball/">Baseball</a>
+<ul class="sub-menu">
+	<li id="menu-item-33352" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33352"><a href="https://www.sicemdawgs.com/uga-baseball-schedule/">2022 Schedule</a></li>
+	<li id="menu-item-18226" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18226"><a href="https://www.sicemdawgs.com/uga-baseball-roster/">Roster</a></li>
+	<li id="menu-item-18227" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18227"><a href="https://www.sicemdawgs.com/past-uga-baseball-schedules/">Past Schedules</a></li>
+	<li id="menu-item-18228" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18228"><a href="https://www.sicemdawgs.com/uga-baseball-recruiting/">Recruiting</a></li>
+	<li id="menu-item-18229" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18229"><a href="https://www.sicemdawgs.com/uga-baseball-history/">History</a></li>
+</ul>
+</li>
+<li id="menu-item-29824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29824"><a href="https://www.sicemdawgs.com/uga-fan-shop/">UGA Fan Shop</a></li>
+<li id="menu-item-18230" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18230"><a href="https://www.sicemdawgs.com/uga-football-tickets/">Tickets</a></li>
+<li id="menu-item-18235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18235"><a href="https://www.sicemdawgs.com/uga-tv-schedule/">TV Schedule</a></li>
+<li id="menu-item-18240" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-18240"><a href="#">More</a>
+<ul class="sub-menu">
+	<li id="menu-item-18233" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18233"><a href="https://www.sicemdawgs.com/uga-downloads/">UGA Downloads</a></li>
+	<li id="menu-item-18234" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18234"><a href="https://www.sicemdawgs.com/uga-links/">UGA Links</a></li>
+	<li id="menu-item-18236" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18236"><a href="https://www.sicemdawgs.com/uga-videos/">UGA Videos</a></li>
+	<li id="menu-item-21791" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21791"><a href="https://www.sicemdawgs.com/about-us/">About Us</a></li>
+	<li id="menu-item-18238" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18238"><a href="https://www.sicemdawgs.com/contact-us/">Contact Us</a></li>
+</ul>
+</li>
+</ul></div>		</nav>
+	</div><!--mvp-fly-menu-wrap-->
+	<div id="mvp-fly-soc-wrap">
+		<span class="mvp-fly-soc-head">Connect with us</span>
+		<ul class="mvp-fly-soc-list left relative">
+							<li><a href="http://www.facebook.com/sicemdawgscom" target="_blank" class="fa fa-facebook-official fa-2"></a></li>
+										<li><a href="http://www.twitter.com/sicemdawgscom" target="_blank" class="fa fa-twitter fa-2"></a></li>
+													<li><a href="http://www.instagram.com/sicemdawgscom" target="_blank" class="fa fa-instagram fa-2"></a></li>
+																	</ul>
+	</div><!--mvp-fly-soc-wrap-->
+</div><!--mvp-fly-wrap-->				<div id="mvp-site" class="left relative">
+		<div id="mvp-search-wrap">
+			<div id="mvp-search-box">
+				<form method="get" id="searchform" action="https://www.sicemdawgs.com/">
+	<input type="text" name="s" id="s" value="Search" onfocus='if (this.value == "Search") { this.value = ""; }' onblur='if (this.value == "") { this.value = "Search"; }' />
+	<input type="hidden" id="searchsubmit" value="Search" />
+</form>			</div><!--mvp-search-box-->
+			<div class="mvp-search-but-wrap mvp-search-click">
+				<span></span>
+				<span></span>
+			</div><!--mvp-search-but-wrap-->
+		</div><!--mvp-search-wrap-->
+		<header id="mvp-top-head-wrap">
+						<nav id="mvp-main-nav-wrap">
+				<div id="mvp-top-nav-wrap" class="left relative">
+					<div class="mvp-main-box-cont">
+						<div id="mvp-top-nav-cont" class="left relative">
+							<div class="mvp-top-nav-right-out relative">
+								<div class="mvp-top-nav-right-in">
+									<div id="mvp-top-nav-left" class="left relative">
+										<div class="mvp-top-nav-left-out relative">
+											<div class="mvp-top-nav-menu-but left relative">
+												<div class="mvp-fly-but-wrap mvp-fly-but-click left relative">
+													<span></span>
+													<span></span>
+													<span></span>
+													<span></span>
+												</div><!--mvp-fly-but-wrap-->
+											</div><!--mvp-top-nav-menu-but-->
+											<div class="mvp-top-nav-left-in">
+												<div id="mvp-top-nav-logo" class="left relative" itemscope itemtype="https://schema.org/Organization">
+																											<a itemprop="url" href="https://www.sicemdawgs.com/"><img itemprop="logo" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="SicEmDawgs.com" data-rjs="2" data-lazy-src="https://www.sicemdawgs.com/wp/wp-content/uploads/2019/11/sicemdawgs-250-50-2019.png" /><noscript><img itemprop="logo" src="https://www.sicemdawgs.com/wp/wp-content/uploads/2019/11/sicemdawgs-250-50-2019.png" alt="SicEmDawgs.com" data-rjs="2" /></noscript></a>
+																																								<h2 class="mvp-logo-title">SicEmDawgs.com</h2>
+																									</div><!--mvp-top-nav-logo-->
+																							</div><!--mvp-top-nav-left-in-->
+										</div><!--mvp-top-nav-left-out-->
+									</div><!--mvp-top-nav-left-->
+								</div><!--mvp-top-nav-right-in-->
+								<div id="mvp-top-nav-right" class="right relative">
+																		<div id="mvp-top-nav-soc" class="left relative">
+																															<a href="http://www.instagram.com/sicemdawgscom" target="_blank"><span class="mvp-nav-soc-but fa fa-instagram fa-2"></span></a>
+																															<a href="http://www.twitter.com/sicemdawgscom" target="_blank"><span class="mvp-nav-soc-but fa fa-twitter fa-2"></span></a>
+																															<a href="http://www.facebook.com/sicemdawgscom" target="_blank"><span class="mvp-nav-soc-but fa fa-facebook-official fa-2"></span></a>
+																				<span class="mvp-nav-soc-head">Connect with us</span>
+									</div><!--mvp-top-nav-soc-->
+																		<span class="mvp-nav-search-but fa fa-search fa-2 mvp-search-click"></span>
+								</div><!--mvp-top-nav-right-->
+							</div><!--mvp-top-nav-right-out-->
+						</div><!--mvp-top-nav-cont-->
+					</div><!--mvp-main-box-cont-->
+				</div><!--mvp-top-nav-wrap-->
+				<div id="mvp-bot-nav-wrap" class="left relative">
+					<div class="mvp-main-box-cont">
+						<div id="mvp-bot-nav-cont" class="left">
+							<div class="mvp-bot-nav-out">
+								<div class="mvp-fly-but-wrap mvp-fly-but-click left relative">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+								</div><!--mvp-fly-but-wrap-->
+								<div class="mvp-bot-nav-in">
+									<div id="mvp-nav-menu" class="left">
+										<div class="menu-main-container"><ul id="menu-main" class="menu"><li id="menu-item-14632" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-ancestor current-menu-parent menu-item-has-children menu-item-14632"><a href="https://www.sicemdawgs.com/uga-football/">Football</a>
+<ul class="sub-menu">
+	<li id="menu-item-39945" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39945"><a href="https://www.sicemdawgs.com/2022-uga-football-schedule/">2022 Schedule</a></li>
+	<li id="menu-item-20375" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20375"><a href="https://www.sicemdawgs.com/future-uga-football-schedules/">Future Schedules</a></li>
+	<li id="menu-item-14130" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-227 current_page_item menu-item-14130"><a href="https://www.sicemdawgs.com/uga-football-roster/" aria-current="page">Roster</a></li>
+	<li id="menu-item-14131" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-14131"><a href="https://www.sicemdawgs.com/uga-football-recruiting/">Recruiting</a>
+	<ul class="sub-menu">
+		<li id="menu-item-25246" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25246"><a href="https://www.sicemdawgs.com/uga-football-commitments/">Commitments</a></li>
+		<li id="menu-item-33501" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33501"><a href="https://www.sicemdawgs.com/uga-football-signees/">UGA Football Signees</a></li>
+		<li id="menu-item-26715" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26715"><a href="https://www.sicemdawgs.com/uga-football-signees/">Past Signees</a></li>
+	</ul>
+</li>
+	<li id="menu-item-14132" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14132"><a href="https://www.sicemdawgs.com/uga-football-history/">History</a></li>
+	<li id="menu-item-21570" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21570"><a href="https://www.sicemdawgs.com/uga-football-records/">Records</a></li>
+	<li id="menu-item-28115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28115"><a href="https://www.sicemdawgs.com/uga-football-tickets/">Tickets</a></li>
+</ul>
+</li>
+<li id="menu-item-14633" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-14633"><a href="https://www.sicemdawgs.com/uga-basketball/">Basketball</a>
+<ul class="sub-menu">
+	<li id="menu-item-14143" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14143"><a href="https://www.sicemdawgs.com/uga-basketball-schedule/">2021-22 Schedule</a></li>
+	<li id="menu-item-18375" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18375"><a href="https://www.sicemdawgs.com/future-uga-basketball-opponents/">Future Opponents</a></li>
+	<li id="menu-item-14144" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14144"><a href="https://www.sicemdawgs.com/past-uga-basketball-schedules/">Past Schedules</a></li>
+	<li id="menu-item-14145" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14145"><a href="https://www.sicemdawgs.com/uga-basketball-roster/">Roster</a></li>
+	<li id="menu-item-14146" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-14146"><a href="https://www.sicemdawgs.com/uga-basketball-recruiting/">Recruiting</a>
+	<ul class="sub-menu">
+		<li id="menu-item-29921" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29921"><a href="https://www.sicemdawgs.com/uga-basketball-signees/">Commitments &#038; Signees</a></li>
+	</ul>
+</li>
+	<li id="menu-item-14147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14147"><a href="https://www.sicemdawgs.com/uga-basketball-history/">History</a></li>
+</ul>
+</li>
+<li id="menu-item-14634" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-14634"><a href="https://www.sicemdawgs.com/uga-baseball/">Baseball</a>
+<ul class="sub-menu">
+	<li id="menu-item-33354" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33354"><a href="https://www.sicemdawgs.com/uga-baseball-schedule/">2022 Schedule</a></li>
+	<li id="menu-item-14162" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14162"><a href="https://www.sicemdawgs.com/uga-baseball-roster/">Roster</a></li>
+	<li id="menu-item-14161" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14161"><a href="https://www.sicemdawgs.com/past-uga-baseball-schedules/">Past Schedules</a></li>
+	<li id="menu-item-14763" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14763"><a href="https://www.sicemdawgs.com/uga-baseball-recruiting/">Recruiting</a></li>
+	<li id="menu-item-14164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14164"><a href="https://www.sicemdawgs.com/uga-baseball-history/">History</a></li>
+</ul>
+</li>
+<li id="menu-item-24755" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24755"><a href="https://www.sicemdawgs.com/uga-football-tickets/">Tickets</a></li>
+<li id="menu-item-24758" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24758"><a href="https://www.sicemdawgs.com/uga-tv-schedule/">TV Schedule</a></li>
+<li id="menu-item-24754" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-24754"><a href="#">More</a>
+<ul class="sub-menu">
+	<li id="menu-item-29823" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29823"><a href="https://www.sicemdawgs.com/uga-fan-shop/">UGA Fan Shop</a></li>
+	<li id="menu-item-24756" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24756"><a href="https://www.sicemdawgs.com/uga-downloads/">UGA Downloads</a></li>
+	<li id="menu-item-24757" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24757"><a href="https://www.sicemdawgs.com/uga-links/">UGA Links</a></li>
+	<li id="menu-item-24759" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24759"><a href="https://www.sicemdawgs.com/uga-videos/">UGA Videos</a></li>
+	<li id="menu-item-24761" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24761"><a href="https://www.sicemdawgs.com/about-us/">About Us</a></li>
+	<li id="menu-item-24762" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24762"><a href="https://www.sicemdawgs.com/contact-us/">Contact Us</a></li>
+	<li id="menu-item-24763" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24763"><a href="https://www.sicemdawgs.com/post-archive/">Post Archive</a></li>
+</ul>
+</li>
+</ul></div>									</div><!--mvp-nav-menu-->
+								</div><!--mvp-bot-nav-in-->
+							</div><!--mvp-bot-nav-out-->
+						</div><!--mvp-bot-nav-cont-->
+					</div><!--mvp-main-box-cont-->
+				</div><!--mvp-bot-nav-wrap-->
+			</nav><!--mvp-main-nav-wrap-->
+		</header>
+		<main id="mvp-main-wrap" class="left relative">
+							<div id="mvp-leader-wrap" class="left relative">
+					<div class="mvp-main-box-cont">
+						<div id="mvp-leader-cont">
+							<ins class="adsbygoogle adslot_1"
+    style="display:inline-block;"
+    data-ad-client="ca-pub-6292152639364487"
+    data-ad-slot="2363173975"></ins>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>						</div><!--mvp-leader-cont-->
+					</div><!--mvp-main-box-cont-->
+				</div><!--mvp-leader-wrap-->
+						<div id="mvp-main-body-wrap" class="left relative">
+				<div class="mvp-main-box-cont">
+					<div id="mvp-main-body" class="left relative"><article id="mvp-article-wrap" class="post-227 page type-page status-publish has-post-thumbnail hentry" itemscope itemtype="http://schema.org/NewsArticle">
+	<div class="mvp-sec-pad left relative">
+		<meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://www.sicemdawgs.com/uga-football-roster/"/>
+		<div class="mvp-post-content-out relative">
+			<div class="mvp-post-content-in">
+				<div id="mvp-post-content" class="left relative">
+					<div class="mvp-content-box">
+						<div id="mvp-article-head2" class="left relative">
+							<h1 class="mvp-post-title left entry-title" itemprop="headline">UGA Football Roster</h1>
+						</div><!--mvp-article-head2-->
+						<div class="mvp-post-soc-out relative">
+														<div id="mvp-post-soc-wrap" class="left relative">
+								<ul class="mvp-post-soc-list left relative">
+									<a href="#" onclick="window.open('http://www.facebook.com/sharer.php?u=https://www.sicemdawgs.com/uga-football-roster/&amp;t=UGA Football Roster', 'facebookShare', 'width=626,height=436'); return false;" title="Share on Facebook">
+									<li class="mvp-post-soc-fb">
+										<i class="fa fa-2 fa-facebook" aria-hidden="true"></i>
+									</li>
+									</a>
+									<a href="#" onclick="window.open('http://twitter.com/share?text=UGA Football Roster -&amp;url=https://www.sicemdawgs.com/uga-football-roster/', 'twitterShare', 'width=626,height=436'); return false;" title="Tweet This Post">
+									<li class="mvp-post-soc-twit">
+										<i class="fa fa-2 fa-twitter" aria-hidden="true"></i>
+									</li>
+									</a>
+									<a href="#" onclick="window.open('http://pinterest.com/pin/create/button/?url=https://www.sicemdawgs.com/uga-football-roster/&amp;media=https://www.sicemdawgs.com/wp/wp-content/uploads/2014/07/sicem-fb-2014-1.png&amp;description=UGA Football Roster', 'pinterestShare', 'width=750,height=350'); return false;" title="Pin This Post">
+									<li class="mvp-post-soc-pin">
+										<i class="fa fa-2 fa-pinterest-p" aria-hidden="true"></i>
+									</li>
+									</a>
+									<a href="mailto:?subject=UGA Football Roster&amp;BODY=I found this article interesting and thought of sharing it with you. Check it out: https://www.sicemdawgs.com/uga-football-roster/">
+									<li class="mvp-post-soc-email">
+										<i class="fa fa-2 fa-envelope" aria-hidden="true"></i>
+									</li>
+									</a>
+																														<a href="https://www.sicemdawgs.com/uga-football-roster/#respond">
+											<li class="mvp-post-soc-com mvp-com-click">
+												<i class="fa fa-2 fa-commenting" aria-hidden="true"></i>
+											</li>
+											</a>
+																											</ul>
+							</div><!--mvp-post-soc-wrap-->
+														<div class="mvp-post-soc-in">
+								<div id="mvp-content-main" class="left relative" itemprop="articleBody">
+									<p><img class="size-full wp-image-31331 aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%2097'%3E%3C/svg%3E" alt="UGA Football Roster" width="150" height="97" data-lazy-src="https://www.sicemdawgs.com/wp/wp-content/uploads/2018/03/uga-football-roster.png" /><noscript><img class="size-full wp-image-31331 aligncenter" src="https://www.sicemdawgs.com/wp/wp-content/uploads/2018/03/uga-football-roster.png" alt="UGA Football Roster" width="150" height="97" /></noscript>The UGA football roster for the 2022 season is listed below. Jersey numbers and positions for the Georgia Bulldogs players are updated as of March 17, 2022.</p>
+<p>The Georgia Bulldogs open the 2022 season vs. the Oregon Ducks in Atlanta, Ga., on Saturday, Sept. 3.</p>
+
+<p>Click/Press column headers to sort.</p>
+<table class="ros">
+<thead>
+<tr>
+<th class="schgry2 sortable-numeric">No.</th>
+<th class="schgry1 sortable-text">Name</th>
+<th class="schgry2 sortable-text">Pos.</th>
+<th class="schgry2 sortable-numeric">Cl.</th>
+<th class="schgry2 sortable-text">Wt.</th>
+<th class="schgry2 sortable-numeric">Ht.</th>
+<th class="schgry3 sortable-text">Hometown (High School)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ros3">0</td>
+<td class="ros1">Rian Davis</td>
+<td class="ros3">ILB</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-2</td>
+<td class="ros3">230</td>
+<td class="ros2">Apopka, FL (Wekiva)</td>
+</tr>
+<tr>
+<td class="ros3">0</td>
+<td class="ros1">Darnell Washington</td>
+<td class="ros3">TE</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-7</td>
+<td class="ros3">265</td>
+<td class="ros2">Las Vegas, NV (Desert Pines)</td>
+</tr>
+<tr>
+<td class="ros3">1</td>
+<td class="ros1">Nyland Green</td>
+<td class="ros3">DB</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-1</td>
+<td class="ros3">185</td>
+<td class="ros2">Covington, GA (Newton)</td>
+</tr>
+<tr>
+<td class="ros3">2</td>
+<td class="ros1">Kendall Milton</td>
+<td class="ros3">RB</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-1</td>
+<td class="ros3">220</td>
+<td class="ros2">Fresno, CA (Buchanan)</td>
+</tr>
+<tr>
+<td class="ros3">4</td>
+<td class="ros1">Nolan Smith</td>
+<td class="ros3">OLB</td>
+<td class="ros3">Sr.</td>
+<td class="ros3">6-3</td>
+<td class="ros3">235</td>
+<td class="ros2">Savannah, GA (IMG Academy)</td>
+</tr>
+<tr>
+<td class="ros3">5</td>
+<td class="ros1">Adonai Mitchell</td>
+<td class="ros3">WR</td>
+<td class="ros3">So.</td>
+<td class="ros3">6-4</td>
+<td class="ros3">190</td>
+<td class="ros2">Missouri City, TX (Cane Ridge)</td>
+</tr>
+<tr>
+<td class="ros3">5</td>
+<td class="ros1">Kelee Ringo</td>
+<td class="ros3">DB</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-2</td>
+<td class="ros3">205</td>
+<td class="ros2">Tacoma, WA (Saguaro)</td>
+</tr>
+<tr>
+<td class="ros3">6</td>
+<td class="ros1">Kenny McIntosh</td>
+<td class="ros3">RB</td>
+<td class="ros3">Sr.</td>
+<td class="ros3">6-1</td>
+<td class="ros3">210</td>
+<td class="ros2">Ft. Lauderdale, FL (University School)</td>
+</tr>
+<tr>
+<td class="ros3">8</td>
+<td class="ros1">Dominick Blaylock</td>
+<td class="ros3">WR</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-1</td>
+<td class="ros3">205</td>
+<td class="ros2">Marietta, GA (Walton)</td>
+</tr>
+<tr>
+<td class="ros3">8</td>
+<td class="ros1">MJ Sherman</td>
+<td class="ros3">OLB</td>
+<td class="ros3">So.</td>
+<td class="ros3">6-2</td>
+<td class="ros3">235</td>
+<td class="ros2">Baltimore, MD (St. John&#8217;s College)</td>
+</tr>
+<tr>
+<td class="ros3">10</td>
+<td class="ros1">Jamon Dumas-Johnson</td>
+<td class="ros3">LB</td>
+<td class="ros3">So.</td>
+<td class="ros3">6-1</td>
+<td class="ros3">235</td>
+<td class="ros2">Hyattsville, MD (St. Frances Acad.)</td>
+</tr>
+<tr>
+<td class="ros3">10</td>
+<td class="ros1">Kearis Jackson</td>
+<td class="ros3">WR</td>
+<td class="ros3">Sr.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">200</td>
+<td class="ros2">Fort Valley, GA (Peach County)</td>
+</tr>
+<tr>
+<td class="ros3">11</td>
+<td class="ros1">Arian Smith</td>
+<td class="ros3">WR</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">185</td>
+<td class="ros2">Bradley, FL (Lakeland)</td>
+</tr>
+<tr>
+<td class="ros3">12</td>
+<td class="ros1">Brock Vandagriff</td>
+<td class="ros3">QB</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-3</td>
+<td class="ros3">205</td>
+<td class="ros2">Bogart, GA (Prince Avenue Christian)</td>
+</tr>
+<tr>
+<td class="ros3">13</td>
+<td class="ros1">Stetson Bennett</td>
+<td class="ros3">QB</td>
+<td class="ros3">Sr.</td>
+<td class="ros3">5-11</td>
+<td class="ros3">190</td>
+<td class="ros2">Blackshear, GA (Pierce County H.S.)</td>
+</tr>
+<tr>
+<td class="ros3">13</td>
+<td class="ros1">Kamari Lassiter</td>
+<td class="ros3">DB</td>
+<td class="ros3">So.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">180</td>
+<td class="ros2">Savannah, GA (American Christian Acad.)</td>
+</tr>
+<tr>
+<td class="ros3">14</td>
+<td class="ros1">David Daniel</td>
+<td class="ros3">DB</td>
+<td class="ros3">So.</td>
+<td class="ros3">6-2</td>
+<td class="ros3">185</td>
+<td class="ros2">Woodstock, GA (Woodstock)</td>
+</tr>
+<tr>
+<td class="ros3">14</td>
+<td class="ros1">Arik Gilbert</td>
+<td class="ros3">WR</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-5</td>
+<td class="ros3">248</td>
+<td class="ros2">Marietta, GA (Marietta)</td>
+</tr>
+<tr>
+<td class="ros3">14</td>
+<td class="ros1">Jackson Muschamp</td>
+<td class="ros3">QB</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-2</td>
+<td class="ros3">190</td>
+<td class="ros2">Columbia, SC (Hammond School)</td>
+</tr>
+<tr>
+<td class="ros3">15</td>
+<td class="ros1">Carson Beck</td>
+<td class="ros3">QB</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-4</td>
+<td class="ros3">225</td>
+<td class="ros2">Jacksonville, FL (Mandarin)</td>
+</tr>
+<tr>
+<td class="ros3">15</td>
+<td class="ros1">Trezmen Marshall</td>
+<td class="ros3">ILB</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-1</td>
+<td class="ros3">230</td>
+<td class="ros2">Homerville, GA (Clinch County)</td>
+</tr>
+<tr>
+<td class="ros3">17</td>
+<td class="ros1">Jackson Meeks</td>
+<td class="ros3">WR</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-2</td>
+<td class="ros3">205</td>
+<td class="ros2">Phenix City, AL (Central)</td>
+</tr>
+<tr>
+<td class="ros3">18</td>
+<td class="ros1">Xavian Sorey</td>
+<td class="ros3">LB</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-3</td>
+<td class="ros3">214</td>
+<td class="ros2">Campbellton, FL (IMG Academy)</td>
+</tr>
+<tr>
+<td class="ros3">19</td>
+<td class="ros1">Brock Bowers</td>
+<td class="ros3">TE</td>
+<td class="ros3">So.</td>
+<td class="ros3">6-4</td>
+<td class="ros3">230</td>
+<td class="ros2">Napa, CA (Napa)</td>
+</tr>
+<tr>
+<td class="ros3">20</td>
+<td class="ros1">Sevaughn Clark</td>
+<td class="ros3">RB</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-1</td>
+<td class="ros3">215</td>
+<td class="ros2">Dawsonville, GA (Dawson County)</td>
+</tr>
+<tr>
+<td class="ros3">20</td>
+<td class="ros1">Smael Mondon</td>
+<td class="ros3">LB</td>
+<td class="ros3">So.</td>
+<td class="ros3">6-3</td>
+<td class="ros3">220</td>
+<td class="ros2">Dallas, GA (Paulding County)</td>
+</tr>
+<tr>
+<td class="ros3">22</td>
+<td class="ros1">Javon Bullard</td>
+<td class="ros3">DB</td>
+<td class="ros3">So.</td>
+<td class="ros3">5-11</td>
+<td class="ros3">180</td>
+<td class="ros2">Milledgeville, GA (Baldwin)</td>
+</tr>
+<tr>
+<td class="ros3">23</td>
+<td class="ros1">Tykee Smith</td>
+<td class="ros3">DB</td>
+<td class="ros3">Sr.</td>
+<td class="ros3">5-10</td>
+<td class="ros3">198</td>
+<td class="ros2">Philadelphia, PA (Imhotep I.C.)</td>
+</tr>
+<tr>
+<td class="ros3">24</td>
+<td class="ros1">Nathan Priestley</td>
+<td class="ros3">QB</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-4</td>
+<td class="ros3">205</td>
+<td class="ros2">Los Angeles, CA (Loyola)</td>
+</tr>
+<tr>
+<td class="ros3">25</td>
+<td class="ros1">Steven Peterson</td>
+<td class="ros3">WR</td>
+<td class="ros3">Sr.</td>
+<td class="ros3">6-2</td>
+<td class="ros3">214</td>
+<td class="ros2">Kennesaw, GA (Harrison)</td>
+</tr>
+<tr>
+<td class="ros3">26</td>
+<td class="ros1">Jehlen Cannady</td>
+<td class="ros3">DB</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">176</td>
+<td class="ros2">Macon, GA (Westside)</td>
+</tr>
+<tr>
+<td class="ros3">26</td>
+<td class="ros1">Collin Drake</td>
+<td class="ros3">QB</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-1</td>
+<td class="ros3">195</td>
+<td class="ros2">Ennis TX (Ennis)</td>
+</tr>
+<tr>
+<td class="ros3">29</td>
+<td class="ros1">Christopher Smith</td>
+<td class="ros3">DB</td>
+<td class="ros3">Sr.</td>
+<td class="ros3">5-11</td>
+<td class="ros3">190</td>
+<td class="ros2">Atlanta, GA (Hapeville Charter)</td>
+</tr>
+<tr>
+<td class="ros3">30</td>
+<td class="ros1">Daijun Edwards</td>
+<td class="ros3">RB</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">5-10</td>
+<td class="ros3">201</td>
+<td class="ros2">Norman Park, GA (Colquitt County)</td>
+</tr>
+<tr>
+<td class="ros3">31</td>
+<td class="ros1">William Poole</td>
+<td class="ros3">DB</td>
+<td class="ros3">Sr.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">190</td>
+<td class="ros2">Atlanta, GA (Hapeville Charter)</td>
+</tr>
+<tr>
+<td class="ros3">32</td>
+<td class="ros1">Chaz Chambliss</td>
+<td class="ros3">LB</td>
+<td class="ros3">So.</td>
+<td class="ros3">6-2</td>
+<td class="ros3">250</td>
+<td class="ros2">Carrollton, GA (Carrollton)</td>
+</tr>
+<tr>
+<td class="ros3">32</td>
+<td class="ros1">Cash Jones</td>
+<td class="ros3">RB</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">182</td>
+<td class="ros2">Brock, TX (Brock)</td>
+</tr>
+<tr>
+<td class="ros3">33</td>
+<td class="ros1">Robert Beal Jr.</td>
+<td class="ros3">OLB</td>
+<td class="ros3">Sr.</td>
+<td class="ros3">6-4</td>
+<td class="ros3">255</td>
+<td class="ros2">Norcross, GA (Peachtree Ridge)</td>
+</tr>
+<tr>
+<td class="ros3">37</td>
+<td class="ros1">Drew Southern</td>
+<td class="ros3">DB</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">5-11</td>
+<td class="ros3">180</td>
+<td class="ros2">Cumming, GA (West Forsyth)</td>
+</tr>
+<tr>
+<td class="ros3">37</td>
+<td class="ros1">Woody Waters</td>
+<td class="ros3">WR</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">5-8</td>
+<td class="ros3">160</td>
+<td class="ros2">Newnan, GA (Newnan)</td>
+</tr>
+<tr>
+<td class="ros3">38</td>
+<td class="ros1">Patrick Taylor</td>
+<td class="ros3">DB</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">175</td>
+<td class="ros2">Johns Creek, GA (Johns Creek)</td>
+</tr>
+<tr>
+<td class="ros3">39</td>
+<td class="ros1">Brady Tindall</td>
+<td class="ros3">WR</td>
+<td class="ros3">Sr.</td>
+<td class="ros3">5-10</td>
+<td class="ros3">192</td>
+<td class="ros2">Atlanta, GA (The Lovett School)</td>
+</tr>
+<tr>
+<td class="ros3">42</td>
+<td class="ros1">Graham Collins</td>
+<td class="ros3">ILB</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-2</td>
+<td class="ros3">215</td>
+<td class="ros2">Atlanta, GA (Holy Innocents Episcopal)</td>
+</tr>
+<tr>
+<td class="ros3">43</td>
+<td class="ros1">Matthew Helow</td>
+<td class="ros3">DB</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">5-11</td>
+<td class="ros3">175</td>
+<td class="ros2">Jacksonville, FL. (Bishop Kenny)</td>
+</tr>
+<tr>
+<td class="ros3">44</td>
+<td class="ros1">Michael Hagerty</td>
+<td class="ros3">TE</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-4</td>
+<td class="ros3">225</td>
+<td class="ros2">Hinesville, GA (Bradwell Institute)</td>
+</tr>
+<tr>
+<td class="ros3">45</td>
+<td class="ros1">Kurt Knisely</td>
+<td class="ros3">RB</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">200</td>
+<td class="ros2">Watkinsville, GA (Athens Academy)</td>
+</tr>
+<tr>
+<td class="ros3">45</td>
+<td class="ros1">Bill Norton</td>
+<td class="ros3">DL</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-6</td>
+<td class="ros3">300</td>
+<td class="ros2">Memphis, TN (Christian Brothers)</td>
+</tr>
+<tr>
+<td class="ros3">46</td>
+<td class="ros1">Payton Bowles</td>
+<td class="ros3">DB</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">5-10</td>
+<td class="ros3">170</td>
+<td class="ros2">Athens, GA (Athens Academy)</td>
+</tr>
+<tr>
+<td class="ros3">47</td>
+<td class="ros1">Dan Jackson</td>
+<td class="ros3">DB</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-1</td>
+<td class="ros3">190</td>
+<td class="ros2">Gainesville, GA (North Hall)</td>
+</tr>
+<tr>
+<td class="ros3">47</td>
+<td class="ros1">Payne Walker</td>
+<td class="ros3">SN</td>
+<td class="ros3">Sr.</td>
+<td class="ros3">6-2</td>
+<td class="ros3">249</td>
+<td class="ros2">Suwanee, GA (North Gwinnett)</td>
+</tr>
+<tr>
+<td class="ros3">48</td>
+<td class="ros1">Wesley Potter</td>
+<td class="ros3">DB</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-3</td>
+<td class="ros3">205</td>
+<td class="ros2">Canton, GA (Sequoyah)</td>
+</tr>
+<tr>
+<td class="ros3">49</td>
+<td class="ros1">Gleaton Jones</td>
+<td class="ros3">RB</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-1</td>
+<td class="ros3">200</td>
+<td class="ros2">Albany, GA (Deerfield-Windsor)</td>
+</tr>
+<tr>
+<td class="ros3">50</td>
+<td class="ros1">Warren Ericson</td>
+<td class="ros3">OL</td>
+<td class="ros3">Sr.</td>
+<td class="ros3">6-4</td>
+<td class="ros3">305</td>
+<td class="ros2">Suwanee, GA (North Gwinnett)</td>
+</tr>
+<tr>
+<td class="ros3">51</td>
+<td class="ros1">Tate Ratledge</td>
+<td class="ros3">OL</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-6</td>
+<td class="ros3">320</td>
+<td class="ros2">Rome, GA (Darlington School)</td>
+</tr>
+<tr>
+<td class="ros3">52</td>
+<td class="ros1">Cameron Kinnie</td>
+<td class="ros3">OL</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-3</td>
+<td class="ros3">300</td>
+<td class="ros2">Suwanee, GA (Collins Hill)</td>
+</tr>
+<tr>
+<td class="ros3">53</td>
+<td class="ros1">Dylan Fairchild</td>
+<td class="ros3">OL</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-5</td>
+<td class="ros3">300</td>
+<td class="ros2">Cumming, GA (West Forsyth)</td>
+</tr>
+<tr>
+<td class="ros3">54</td>
+<td class="ros1">Cade Brock</td>
+<td class="ros3">ILB</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">250</td>
+<td class="ros2">Subligna, GA (Darlington)</td>
+</tr>
+<tr>
+<td class="ros3">55</td>
+<td class="ros1">Marlin Dean</td>
+<td class="ros3">DL</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-5</td>
+<td class="ros3">275</td>
+<td class="ros2">Bowman, GA (IMG Academy)</td>
+</tr>
+<tr>
+<td class="ros3">55</td>
+<td class="ros1">Jared Wilson</td>
+<td class="ros3">OL</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-3</td>
+<td class="ros3">330</td>
+<td class="ros2">Winston-Salem, NC (West Forsyth)</td>
+</tr>
+<tr>
+<td class="ros3">56</td>
+<td class="ros1">Micah Morris</td>
+<td class="ros3">OL</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-6</td>
+<td class="ros3">330</td>
+<td class="ros2">Kingsland, GA (Camden County)</td>
+</tr>
+<tr>
+<td class="ros3">56</td>
+<td class="ros1">William Mote</td>
+<td class="ros3">SN</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-2</td>
+<td class="ros3">230</td>
+<td class="ros2">Hoover, AL (Spain Park)</td>
+</tr>
+<tr>
+<td class="ros3">57</td>
+<td class="ros1">Luke Collins</td>
+<td class="ros3">OLB</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-2</td>
+<td class="ros3">245</td>
+<td class="ros2">Birmingham, AL (Birmingham Prep)</td>
+</tr>
+<tr>
+<td class="ros3">58</td>
+<td class="ros1">Austin Blaske</td>
+<td class="ros3">OL</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-5</td>
+<td class="ros3">310</td>
+<td class="ros2">Faulkville, GA (South Effingham)</td>
+</tr>
+<tr>
+<td class="ros3">59</td>
+<td class="ros1">Broderick Jones</td>
+<td class="ros3">OL</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-4</td>
+<td class="ros3">315</td>
+<td class="ros2">Lithonia, GA (Lithonia)</td>
+</tr>
+<tr>
+<td class="ros3">60</td>
+<td class="ros1">Clay Webb</td>
+<td class="ros3">OL</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-3</td>
+<td class="ros3">290</td>
+<td class="ros2">Oxford, AL (Oxford)</td>
+</tr>
+<tr>
+<td class="ros3">63</td>
+<td class="ros1">Sedrick Van Pran</td>
+<td class="ros3">OL</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-4</td>
+<td class="ros3">310</td>
+<td class="ros2">New Orleans, LA (Warren Easton)</td>
+</tr>
+<tr>
+<td class="ros3">65</td>
+<td class="ros1">Amarius Mims</td>
+<td class="ros3">OL</td>
+<td class="ros3">So.</td>
+<td class="ros3">6-7</td>
+<td class="ros3">330</td>
+<td class="ros2">Cochran, GA (Bleckley County)</td>
+</tr>
+<tr>
+<td class="ros3">66</td>
+<td class="ros1">Jonathan Washburn</td>
+<td class="ros3">SN</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-3</td>
+<td class="ros3">220</td>
+<td class="ros2">Ringgold, GA (Heritage)</td>
+</tr>
+<tr>
+<td class="ros3">67</td>
+<td class="ros1">John Ferguson</td>
+<td class="ros3">OL</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-5</td>
+<td class="ros3">270</td>
+<td class="ros2">Athens, GA (Athens Academy)</td>
+</tr>
+<tr>
+<td class="ros3">68</td>
+<td class="ros1">Chris Brown</td>
+<td class="ros3">OL</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-5</td>
+<td class="ros3">300</td>
+<td class="ros2">Savannah, GA (Islands)</td>
+</tr>
+<tr>
+<td class="ros3">70</td>
+<td class="ros1">Warren McClendon</td>
+<td class="ros3">OL</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-4</td>
+<td class="ros3">300</td>
+<td class="ros2">Brunswick, GA (Brunswick)</td>
+</tr>
+<tr>
+<td class="ros3">73</td>
+<td class="ros1">Xavier Truss</td>
+<td class="ros3">OL</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-7</td>
+<td class="ros3">330</td>
+<td class="ros2">West Warwick, RI (Bishop Hendricken)</td>
+</tr>
+<tr>
+<td class="ros3">75</td>
+<td class="ros1">Owen Condon</td>
+<td class="ros3">OL</td>
+<td class="ros3">Sr.</td>
+<td class="ros3">6-7</td>
+<td class="ros3">310</td>
+<td class="ros2">OKhoma City, OK (Bishop McGuinness)</td>
+</tr>
+<tr>
+<td class="ros3">76</td>
+<td class="ros1">Miles Johnson</td>
+<td class="ros3">OL</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-5</td>
+<td class="ros3">320</td>
+<td class="ros2">Blue Ridge, GA (Fannin County)</td>
+</tr>
+<tr>
+<td class="ros3">77</td>
+<td class="ros1">Devin Willock</td>
+<td class="ros3">OL</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-7</td>
+<td class="ros3">335</td>
+<td class="ros2">New Milford, NJ (Paramus Catholic)</td>
+</tr>
+<tr>
+<td class="ros3">78</td>
+<td class="ros1">Chad Lindberg</td>
+<td class="ros3">OL</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-6</td>
+<td class="ros3">325</td>
+<td class="ros2">League City, TX (Clear Creek)</td>
+</tr>
+<tr>
+<td class="ros3">78</td>
+<td class="ros1">Nazir Stackhouse</td>
+<td class="ros3">DL</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-3</td>
+<td class="ros3">320</td>
+<td class="ros2">Stone Mountain, GA (Columbia)</td>
+</tr>
+<tr>
+<td class="ros3">79</td>
+<td class="ros1">Weston Wallace</td>
+<td class="ros3">OL</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-4</td>
+<td class="ros3">320</td>
+<td class="ros2">Eatonton, GA (Gatewood School)</td>
+</tr>
+<tr>
+<td class="ros3">80</td>
+<td class="ros1">Brett Seither</td>
+<td class="ros3">TE</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-5</td>
+<td class="ros3">228</td>
+<td class="ros2">Clearwater, FL (Clearwater Cent. Cath.)</td>
+</tr>
+<tr>
+<td class="ros3">81</td>
+<td class="ros1">Marcus Rosemy-Jacksaint</td>
+<td class="ros3">WR</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-2</td>
+<td class="ros3">195</td>
+<td class="ros2">Pompano Beach, FL (St. Thomas Aquinas)</td>
+</tr>
+<tr>
+<td class="ros3">82</td>
+<td class="ros1">Logan Johnson</td>
+<td class="ros3">WR</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">5-6</td>
+<td class="ros3">155</td>
+<td class="ros2">Bogart, GA (Prince Ave. Christian)</td>
+</tr>
+<tr>
+<td class="ros3">84</td>
+<td class="ros1">Ladd McConkey</td>
+<td class="ros3">WR</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">185</td>
+<td class="ros2">Chatsworth, GA (North Murray)</td>
+</tr>
+<tr>
+<td class="ros3">85</td>
+<td class="ros1">Drew Sheehan</td>
+<td class="ros3">TE</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-2</td>
+<td class="ros3">215</td>
+<td class="ros2">Woodstock, GA (Woodstock)</td>
+</tr>
+<tr>
+<td class="ros3">87</td>
+<td class="ros1">Mekhi Mews</td>
+<td class="ros3">WR</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">5-8</td>
+<td class="ros3">170</td>
+<td class="ros2">Lawrenceville, GA (Central Gwinnett)</td>
+</tr>
+<tr>
+<td class="ros3">88</td>
+<td class="ros1">Jalen Carter</td>
+<td class="ros3">DL</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-3</td>
+<td class="ros3">310</td>
+<td class="ros2">Apopka, FL (Apopka)</td>
+</tr>
+<tr>
+<td class="ros3">88</td>
+<td class="ros1">Ryland Goede</td>
+<td class="ros3">TE</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-6</td>
+<td class="ros3">240</td>
+<td class="ros2">Kennesaw, GA (Kennesaw Mountain)</td>
+</tr>
+<tr>
+<td class="ros3">89</td>
+<td class="ros1">Malcolm Brown</td>
+<td class="ros3">DL</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">270</td>
+<td class="ros2">Guyton, GA (South Effingham)</td>
+</tr>
+<tr>
+<td class="ros3">89</td>
+<td class="ros1">Braxton Hicks</td>
+<td class="ros3">WR</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-2</td>
+<td class="ros3">195</td>
+<td class="ros2">Tiger, GA (Rabun County)</td>
+</tr>
+<tr>
+<td class="ros3">90</td>
+<td class="ros1">Tramel Walthour</td>
+<td class="ros3">DL</td>
+<td class="ros3">Sr.</td>
+<td class="ros3">6-3</td>
+<td class="ros3">280</td>
+<td class="ros2">Hinesville, GA (Liberty County)</td>
+</tr>
+<tr>
+<td class="ros3">91</td>
+<td class="ros1">Tymon Mitchell</td>
+<td class="ros3">DL</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-3</td>
+<td class="ros3">300</td>
+<td class="ros2">Nashville, TN (Franklin Road Acad.)</td>
+</tr>
+<tr>
+<td class="ros3">93</td>
+<td class="ros1">Tyrion Ingram-Dawkins</td>
+<td class="ros3">DL</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-5</td>
+<td class="ros3">300</td>
+<td class="ros2">Gaffney, SC (Gaffney)</td>
+</tr>
+<tr>
+<td class="ros3">94</td>
+<td class="ros1">Jonathan Jefferson</td>
+<td class="ros3">DL</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-3</td>
+<td class="ros3">295</td>
+<td class="ros2">Douglasville, GA (Douglas County)</td>
+</tr>
+<tr>
+<td class="ros3">96</td>
+<td class="ros1">Zion Logue</td>
+<td class="ros3">DL</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-5</td>
+<td class="ros3">295</td>
+<td class="ros2">Lebanon, TN (Lebanon)</td>
+</tr>
+<tr>
+<td class="ros3">96</td>
+<td class="ros1">Jack Podlesny</td>
+<td class="ros3">PK</td>
+<td class="ros3">Sr.</td>
+<td class="ros3">6-1</td>
+<td class="ros3">180</td>
+<td class="ros2">St. Simons Island, GA (Glynn Academy)</td>
+</tr>
+<tr>
+<td class="ros3">97</td>
+<td class="ros1">Warren Brinson</td>
+<td class="ros3">DL</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-4</td>
+<td class="ros3">305</td>
+<td class="ros2">Savannah, GA (IMG Acad.)</td>
+</tr>
+<tr>
+<td class="ros3">97</td>
+<td class="ros1">Matthew Sumlin</td>
+<td class="ros3">PK</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">5-11</td>
+<td class="ros3">170</td>
+<td class="ros2">Smyrna, GA (Whitefield Academy)</td>
+</tr>
+<tr>
+<td class="ros3">98</td>
+<td class="ros1">Noah Jones</td>
+<td class="ros3">P</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">165</td>
+<td class="ros2">Cairo, GA (Cairo)</td>
+</tr>
+<tr>
+<td class="ros3">99</td>
+<td class="ros1">Jared Zirkel</td>
+<td class="ros3">PK</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-3</td>
+<td class="ros3">185</td>
+<td class="ros2">Kerrville, TX (Tivy)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Bear Alexander</td>
+<td class="ros3">DL</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-3</td>
+<td class="ros3">315</td>
+<td class="ros2">Denton, TX (Brewer)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Aliou Bah</td>
+<td class="ros3">OL</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-5</td>
+<td class="ros3">330</td>
+<td class="ros2">Bradenton, FL (IMG Academy)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Davis Day</td>
+<td class="ros3">TE</td>
+<td class="ros3">Sr.</td>
+<td class="ros3">6-4</td>
+<td class="ros3">235</td>
+<td class="ros2">Hamilton, GA (Harris County)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Oscar Delp</td>
+<td class="ros3">TE</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-5</td>
+<td class="ros3">225</td>
+<td class="ros2">Cumming, GA (West Forsyth)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Stephen Erb</td>
+<td class="ros3">LB</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">5-11</td>
+<td class="ros3">188</td>
+<td class="ros2">Suwanee, GA (Lambert)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Daylen Everette</td>
+<td class="ros3">DB</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-1</td>
+<td class="ros3">190</td>
+<td class="ros2">Bradenton, FL (IMG Academy)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Austine Eziukwu</td>
+<td class="ros3">DB</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-2</td>
+<td class="ros3">210</td>
+<td class="ros2">Powder Springs, GA (McEachern)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Ty Ferguson</td>
+<td class="ros3">RB</td>
+<td class="ros3">RFr.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">200</td>
+<td class="ros2">Winder, GA (Apalachee)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Terrell Foster</td>
+<td class="ros3">OLB</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">190</td>
+<td class="ros2">Kennesaw, GA (IMG Academy)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Earnest Greene, III</td>
+<td class="ros3">OL</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-4</td>
+<td class="ros3">330</td>
+<td class="ros2">Bellflower, CA (St. John Bosco)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Jacob Hood</td>
+<td class="ros3">OL</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-8</td>
+<td class="ros3">350</td>
+<td class="ros2">Nashville, TN (Hillsboro)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Myles Jackson</td>
+<td class="ros3">ILB</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">236</td>
+<td class="ros2">Louisville, TN (Jefferson County)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Grant Johnson</td>
+<td class="ros3">WR</td>
+<td class="ros3">Sr.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">170</td>
+<td class="ros2">Norcross, GA (Norcross)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Samuel Johnson</td>
+<td class="ros3">ILB</td>
+<td class="ros3">RSo.</td>
+<td class="ros3">6-1</td>
+<td class="ros3">225</td>
+<td class="ros2">Lilburn, GA (Providence Christian Acad.)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Collin Lark</td>
+<td class="ros3">WR</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">191</td>
+<td class="ros2">Dallas, TA (Dallas Jesuit)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">C.J. Madden</td>
+<td class="ros3">DE</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-4</td>
+<td class="ros3">240</td>
+<td class="ros2">Ellenwood, GA (Cedar Grove)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">De&#8217;Nylon Morrissette</td>
+<td class="ros3">WR</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-1</td>
+<td class="ros3">200</td>
+<td class="ros2">Kennesaw, GA (North Cobb)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Hunter Rainey</td>
+<td class="ros3">TE</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-4</td>
+<td class="ros3">230</td>
+<td class="ros2">Gainesville, GA (West Hall)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">C.J. Smith</td>
+<td class="ros3">WR</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-3</td>
+<td class="ros3">175</td>
+<td class="ros2">Orlando, FL (Mt. Dora)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Malaki Starks</td>
+<td class="ros3">DB</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-1</td>
+<td class="ros3">205</td>
+<td class="ros2">Jefferson, GA (Jefferson)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Lorenzo Stephenson</td>
+<td class="ros3">RB</td>
+<td class="ros3">Sr.</td>
+<td class="ros3">5-7</td>
+<td class="ros3">185</td>
+<td class="ros2">Auburn, Ga. (Apalachee)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Gunner Stockton</td>
+<td class="ros3">QB</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-1</td>
+<td class="ros3">210</td>
+<td class="ros2">Tiger, GA (Rabun County)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">JaCorey Thomas</td>
+<td class="ros3">DB</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">200</td>
+<td class="ros2">Orlando, FL (Boone)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Brett Thorson</td>
+<td class="ros3">P</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-2</td>
+<td class="ros3">210</td>
+<td class="ros2">Australia (Pro Kick Australia)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">George Vining</td>
+<td class="ros3">WR</td>
+<td class="ros3">Jr.</td>
+<td class="ros3">6-0</td>
+<td class="ros3">205</td>
+<td class="ros2">Macon, GA (Tattnall Square Academy)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Jalon Walker</td>
+<td class="ros3">ILB</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-2</td>
+<td class="ros3">225</td>
+<td class="ros2">Salisbury, NC (Salisbury)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">C.J. Washington</td>
+<td class="ros3">ILB</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-1</td>
+<td class="ros3">220</td>
+<td class="ros2">Cedartown, GA (Cedartown)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Shone Washington</td>
+<td class="ros3">DL</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-4</td>
+<td class="ros3">300</td>
+<td class="ros2">New Orleans, LA (Warren Easton)</td>
+</tr>
+<tr>
+<td class="ros3">&#8212;</td>
+<td class="ros1">Mykel Williams</td>
+<td class="ros3">DL</td>
+<td class="ros3">Fr.</td>
+<td class="ros3">6-5</td>
+<td class="ros3">260</td>
+<td class="ros2">Columbus, GA (Hardaway)</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://www.sicemdawgs.com/downloads/2022-FBRoster.pdf" target="_blank" rel="noopener noreferrer"><strong>Printable 2022 UGA Football Roster</strong></a> (PDF)</p>
+<h2>UGA Football Coaches</h2>
+<h4>Head Coach</h4>
+<ul>
+<li><a href="https://georgiadogs.com/sports/football/roster/coaches/kirby-smart/2931" target="_blank" rel="noopener noreferrer">Kirby Smart</a></li>
+</ul>
+<h4>Offense</h4>
+<ul>
+<li><a href="https://georgiadogs.com/sports/football/roster/coaches/todd-monken/2939" target="_blank" rel="noopener noreferrer">Todd Monken</a> &#8211; Offensive Coordinator/QBs Coach</li>
+<li><a href="https://georgiadogs.com/sports/football/roster/coaches/stacy-searels/3099" target="_blank" rel="noopener">Stacy Searels</a> &#8211; Offensive Line</li>
+<li><a href="https://georgiadogs.com/sports/football/roster/coaches/dell-mcgee/2932" target="_blank" rel="noopener noreferrer">Dell McGee</a> &#8211; Run Game Coordinator/Running Backs</li>
+<li><a href="https://georgiadogs.com/sports/football/roster/coaches/bryan-mcclendon/3095" target="_blank" rel="noopener noreferrer">Bryan McClendon</a> &#8211; Pass Game Coordinator/Wide Receivers</li>
+<li><a href="https://georgiadogs.com/sports/football/roster/coaches/scott-cochran/2940" target="_blank" rel="noopener noreferrer">Scott Cochran</a> &#8211; Special Teams Coordinator</li>
+<li><a href="https://georgiadogs.com/sports/football/roster/coaches/todd-hartley/2937" target="_blank" rel="noopener noreferrer">Todd Hartley</a> &#8211; Tight Ends</li>
+</ul>
+<h4>Defense</h4>
+<ul>
+<li><a href="https://georgiadogs.com/sports/football/roster/coaches/will-muschamp/3092" target="_blank" rel="noopener">Will Muschamp</a> &#8211; Co-Defensive Coordinator</li>
+<li><a href="https://georgiadogs.com/sports/football/roster/coaches/glenn-schumann/2933" target="_blank" rel="noopener noreferrer">Glenn Schumann</a> &#8211; Co-Defensive Coordinator/Inside Linebackers</li>
+<li><a href="https://georgiadogs.com/sports/football/roster/coaches/tray-scott/2934" target="_blank" rel="noopener noreferrer">Tray Scott</a> &#8211; Defensive Line</li>
+<li><a href="https://georgiadogs.com/sports/football/roster/coaches/chidera-uzo-diribe/3093" target="_blank" rel="noopener">Chidera Uzo-Diribe</a> &#8211; Outside Linebackers</li>
+<li><a href="https://georgiadogs.com/sports/football/roster/coaches/fran-brown/3097" target="_blank" rel="noopener">Fran Brown</a> &#8211; Defensive Backs</li>
+</ul>
+<p><a href="https://georgiadogs.com/sports/football/coaches" target="_blank" rel="noopener noreferrer">Full UGA Coaching/Support Staff</a></p>
+																		<div class="mvp-org-wrap" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+										<div class="mvp-org-logo" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+																							<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://www.sicemdawgs.com/wp/wp-content/uploads/2019/11/sicemdawgs-250-50-2019.png"/><noscript><img src="https://www.sicemdawgs.com/wp/wp-content/uploads/2019/11/sicemdawgs-250-50-2019.png"/></noscript>
+												<meta itemprop="url" content="https://www.sicemdawgs.com/wp/wp-content/uploads/2019/11/sicemdawgs-250-50-2019.png">
+																					</div><!--mvp-org-logo-->
+										<meta itemprop="name" content="SicEmDawgs.com">
+									</div><!--mvp-org-wrap-->									
+								</div><!--mvp-content-main-->
+							</div><!--mvp-post-soc-in-->
+						</div><!--mvp-post-soc-out-->
+					</div><!--mvp-content-box-->
+				</div><!--mvp-post-content-->
+			</div><!--mvp-post-content-in-->
+			<div id="mvp-side-wrap" class="relative">
+						<section id="mvp_tabber_widget-3" class="mvp-side-widget mvp_tabber_widget">
+				<div class="mvp-side-tab-wrap left relative">
+					<div class="mvp-side-tab-top left relative">
+						<ul class="mvp-side-tab-list mvp-col-tabs">
+							<li class="mvp-feat-col-tab">
+								<a href="#mvp-tab-col1"><span class="mvp-side-tab-head"><i class="fa fa-clock-o" aria-hidden="true"></i> Headlines</span></a>
+							</li>
+							<li>
+								<a href="#mvp-tab-col2"><span class="mvp-side-tab-head"><i class="fa fa-bolt" aria-hidden="true"></i>
+ Trending</span></a>
+							</li>
+													</ul>
+					</div><!--mvp-side-tab-top-->
+					<div id="mvp-tab-col1" class="mvp-side-tab-main left relative mvp-tab-col-cont">
+													<div class="mvp-side-tab-story left relative">
+																	<div class="mvp-side-tab-out relative">
+										<a href="https://www.sicemdawgs.com/2022/03/antione-jackson-commits-to-uga-football-for-2024-class/" rel="bookmark">
+										<div class="mvp-side-tab-img left relative">
+											<img width="80" height="80" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2080%2080'%3E%3C/svg%3E" class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image" alt="Antione Jackson" data-lazy-srcset="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/antione-jackson-247-80x80.jpg 80w, https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/antione-jackson-247-150x150.jpg 150w" data-lazy-sizes="(max-width: 80px) 100vw, 80px" data-lazy-src="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/antione-jackson-247-80x80.jpg" /><noscript><img width="80" height="80" src="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/antione-jackson-247-80x80.jpg" class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image" alt="Antione Jackson" srcset="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/antione-jackson-247-80x80.jpg 80w, https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/antione-jackson-247-150x150.jpg 150w" sizes="(max-width: 80px) 100vw, 80px" /></noscript>																					</div><!--mvp-side-tab-img-->
+										</a>
+										<div class="mvp-side-tab-in">
+											<div class="mvp-side-tab-text left relative">
+												<h3>UGA Football</h3>
+												<h2><a href="https://www.sicemdawgs.com/2022/03/antione-jackson-commits-to-uga-football-for-2024-class/" rel="bookmark">Antione Jackson commits to UGA football for 2024 class</a></h2>
+											</div><!--mvp-side-tab-text-->
+										</div><!--mvp-side-tab-in-->
+									</div><!--mvp-side-tab-out-->
+															</div><!--mvp-side-tab-story-->
+													<div class="mvp-side-tab-story left relative">
+																	<div class="mvp-side-tab-out relative">
+										<a href="https://www.sicemdawgs.com/2022/03/2022-uga-football-spring-guide-released/" rel="bookmark">
+										<div class="mvp-side-tab-img left relative">
+											<img width="80" height="80" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2080%2080'%3E%3C/svg%3E" class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image" alt="2022 UGA Football Spring Guide" loading="lazy" data-lazy-srcset="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/2022-uga-football-spring-guide-80x80.jpg 80w, https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/2022-uga-football-spring-guide-150x150.jpg 150w" data-lazy-sizes="(max-width: 80px) 100vw, 80px" data-lazy-src="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/2022-uga-football-spring-guide-80x80.jpg" /><noscript><img width="80" height="80" src="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/2022-uga-football-spring-guide-80x80.jpg" class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image" alt="2022 UGA Football Spring Guide" loading="lazy" srcset="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/2022-uga-football-spring-guide-80x80.jpg 80w, https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/2022-uga-football-spring-guide-150x150.jpg 150w" sizes="(max-width: 80px) 100vw, 80px" /></noscript>																					</div><!--mvp-side-tab-img-->
+										</a>
+										<div class="mvp-side-tab-in">
+											<div class="mvp-side-tab-text left relative">
+												<h3>UGA Football</h3>
+												<h2><a href="https://www.sicemdawgs.com/2022/03/2022-uga-football-spring-guide-released/" rel="bookmark">2022 UGA Football Spring Guide released</a></h2>
+											</div><!--mvp-side-tab-text-->
+										</div><!--mvp-side-tab-in-->
+									</div><!--mvp-side-tab-out-->
+															</div><!--mvp-side-tab-story-->
+													<div class="mvp-side-tab-story left relative">
+																	<div class="mvp-side-tab-out relative">
+										<a href="https://www.sicemdawgs.com/2022/03/bulldogs-open-2022-spring-practice/" rel="bookmark">
+										<div class="mvp-side-tab-img left relative">
+											<img width="80" height="80" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2080%2080'%3E%3C/svg%3E" class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image" alt="Kirby Smart" loading="lazy" data-lazy-srcset="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/220315_AJW_FB_PRESS_0723-80x80.jpg 80w, https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/220315_AJW_FB_PRESS_0723-150x150.jpg 150w" data-lazy-sizes="(max-width: 80px) 100vw, 80px" data-lazy-src="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/220315_AJW_FB_PRESS_0723-80x80.jpg" /><noscript><img width="80" height="80" src="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/220315_AJW_FB_PRESS_0723-80x80.jpg" class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image" alt="Kirby Smart" loading="lazy" srcset="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/220315_AJW_FB_PRESS_0723-80x80.jpg 80w, https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/220315_AJW_FB_PRESS_0723-150x150.jpg 150w" sizes="(max-width: 80px) 100vw, 80px" /></noscript>																					</div><!--mvp-side-tab-img-->
+										</a>
+										<div class="mvp-side-tab-in">
+											<div class="mvp-side-tab-text left relative">
+												<h3>UGA Football</h3>
+												<h2><a href="https://www.sicemdawgs.com/2022/03/bulldogs-open-2022-spring-practice/" rel="bookmark">Bulldogs open 2022 Spring practice</a></h2>
+											</div><!--mvp-side-tab-text-->
+										</div><!--mvp-side-tab-in-->
+									</div><!--mvp-side-tab-out-->
+															</div><!--mvp-side-tab-story-->
+													<div class="mvp-side-tab-story left relative">
+																	<div class="mvp-side-tab-out relative">
+										<a href="https://www.sicemdawgs.com/2022/03/g-day-2022-to-be-televised-live-by-espn2/" rel="bookmark">
+										<div class="mvp-side-tab-img left relative">
+											<img width="80" height="80" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2080%2080'%3E%3C/svg%3E" class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image" alt="G-Day 2022" loading="lazy" data-lazy-srcset="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/210417_AJW_FB_GDAY_H2_0197-80x80.jpg 80w, https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/210417_AJW_FB_GDAY_H2_0197-150x150.jpg 150w" data-lazy-sizes="(max-width: 80px) 100vw, 80px" data-lazy-src="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/210417_AJW_FB_GDAY_H2_0197-80x80.jpg" /><noscript><img width="80" height="80" src="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/210417_AJW_FB_GDAY_H2_0197-80x80.jpg" class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image" alt="G-Day 2022" loading="lazy" srcset="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/210417_AJW_FB_GDAY_H2_0197-80x80.jpg 80w, https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/210417_AJW_FB_GDAY_H2_0197-150x150.jpg 150w" sizes="(max-width: 80px) 100vw, 80px" /></noscript>																					</div><!--mvp-side-tab-img-->
+										</a>
+										<div class="mvp-side-tab-in">
+											<div class="mvp-side-tab-text left relative">
+												<h3>UGA Football</h3>
+												<h2><a href="https://www.sicemdawgs.com/2022/03/g-day-2022-to-be-televised-live-by-espn2/" rel="bookmark">G-Day 2022 to be televised live by ESPN2</a></h2>
+											</div><!--mvp-side-tab-text-->
+										</div><!--mvp-side-tab-in-->
+									</div><!--mvp-side-tab-out-->
+															</div><!--mvp-side-tab-story-->
+													<div class="mvp-side-tab-story left relative">
+																	<div class="mvp-side-tab-out relative">
+										<a href="https://www.sicemdawgs.com/2022/03/mike-white-named-bulldogs-head-basketball-coach/" rel="bookmark">
+										<div class="mvp-side-tab-img left relative">
+											<img width="80" height="80" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2080%2080'%3E%3C/svg%3E" class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image" alt="Mike White" loading="lazy" data-lazy-srcset="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/USATSI_17584561-80x80.jpg 80w, https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/USATSI_17584561-150x150.jpg 150w" data-lazy-sizes="(max-width: 80px) 100vw, 80px" data-lazy-src="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/USATSI_17584561-80x80.jpg" /><noscript><img width="80" height="80" src="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/USATSI_17584561-80x80.jpg" class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image" alt="Mike White" loading="lazy" srcset="https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/USATSI_17584561-80x80.jpg 80w, https://www.sicemdawgs.com/wp/wp-content/uploads/2022/03/USATSI_17584561-150x150.jpg 150w" sizes="(max-width: 80px) 100vw, 80px" /></noscript>																					</div><!--mvp-side-tab-img-->
+										</a>
+										<div class="mvp-side-tab-in">
+											<div class="mvp-side-tab-text left relative">
+												<h3>UGA Basketball</h3>
+												<h2><a href="https://www.sicemdawgs.com/2022/03/mike-white-named-bulldogs-head-basketball-coach/" rel="bookmark">Mike White named Bulldogs’ Head Basketball Coach</a></h2>
+											</div><!--mvp-side-tab-text-->
+										</div><!--mvp-side-tab-in-->
+									</div><!--mvp-side-tab-out-->
+															</div><!--mvp-side-tab-story-->
+											</div><!--mvp-tab-col1-->
+					<div id="mvp-tab-col2" class="mvp-side-tab-main left relative mvp-tab-col-cont">
+											</div><!--mvp-tab-col2-->
+									</div><!--mvp-side-tab-wrap-->
+
+		</section>			<div class="mvp-widget-ad left relative">
+				<span class="mvp-ad-label">Advertisement</span>
+				<!-- SMG_Sicemdawgs/300x250_1a/sports/football/ncaa.general -->
+<div id='usmg_ad_SMG_Sicemdawgs_300x250_1a_sports_football_ncaa.general'>
+     <script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+         googletag.cmd.push(function() {
+             googletag.defineSlot('/7103/SMG_Sicemdawgs/300x250_1a/sports/football/ncaa.general', [[300,250],[300,600]], 'usmg_ad_SMG_Sicemdawgs_300x250_1a_sports_football_ncaa.general').addService(googletag.pubads());
+             googletag.enableServices();
+             googletag.display('usmg_ad_SMG_Sicemdawgs_300x250_1a_sports_football_ncaa.general');
+         });
+     </script>
+</div>			</div><!--mvp-widget-ad-->
+					<div class="mvp-widget-ad left relative">
+				<span class="mvp-ad-label">Advertisement</span>
+				<a href="https://prf.hn/click/camref:1011l9Qnz/destination:https://www.stubhub.com/georgia-bulldogs-football-tickets/performer/6987/[p_id:1100l89314]" target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20336%20248'%3E%3C/svg%3E" width="336 height="248" data-lazy-src="https://www.sicemdawgs.com/wp/wp-content/uploads/2018/03/uga-football-tickets.jpg"><noscript><img src="https://www.sicemdawgs.com/wp/wp-content/uploads/2018/03/uga-football-tickets.jpg" width="336 height="248"></noscript></a>			</div><!--mvp-widget-ad-->
+		<section id="custom_html-10" class="widget_text mvp-side-widget widget_custom_html"><h4 class="mvp-sec-head"><span class="mvp-sec-head">2022 UGA Football Tickets</span></h4><div class="textwidget custom-html-widget"><ul id="sb-tickets">
+	<li>09/03 - <a href="https://prf.hn/click/camref:1011l9Qnz/destination:https://www.stubhub.com/chick-fil-a-kickoff-game-atlanta-tickets-9-3-2022/event/105127556/[p_id:1100l89314]" target="_blank" rel="noopener">Oregon</a> (in Atlanta)</li>
+<li>09/10 - <a href="https://prf.hn/click/camref:1011l9Qnz/destination:https://www.stubhub.com/georgia-bulldogs-football-athens-tickets-9-10-2022/event/105131126/[p_id:1100l89314]" target="_blank" rel="noopener">Samford</a></li>
+<li>09/17 - <a href="https://prf.hn/click/camref:1011l9Qnz/destination:https://www.stubhub.com/south-carolina-gamecocks-football-columbia-tickets-9-17-2022/event/105130908/[p_id:1100l89314]" target="_blank" rel="noopener">at South Carolina</a></li>
+<li>09/24 - <a href="https://prf.hn/click/camref:1011l9Qnz/destination:https://www.stubhub.com/georgia-bulldogs-football-athens-tickets-9-24-2022/event/105131128/[p_id:1100l89314]" target="_blank" rel="noopener">Kent State</a></li>
+<li>10/01 - <a href="https://prf.hn/click/camref:1011l9Qnz/destination:https://www.stubhub.com/missouri-tigers-football-columbia-tickets-10-1-2022/event/105129594/[p_id:1100l89314]" target="_blank" rel="noopener">at Missouri</a></li>
+<li>10/08 - <a href="https://prf.hn/click/camref:1011l9Qnz/destination:https://www.stubhub.com/georgia-bulldogs-football-athens-tickets-10-8-2022/event/105131131/[p_id:1100l89314]" target="_blank" rel="noopener">Auburn</a></li>
+<li>10/15 - <a href="https://prf.hn/click/camref:1011l9Qnz/destination:https://www.stubhub.com/georgia-bulldogs-football-athens-tickets-10-15-2022/event/105131132/[p_id:1100l89314]" target="_blank" rel="noopener">Vanderbilt</a></li>
+<li>10/29 - <a href="https://prf.hn/click/camref:1011l9Qnz/destination:https://www.stubhub.com/georgia-bulldogs-football-athens-tickets-10-15-2022/event/105131132/[p_id:1100l89314]" target="_blank" rel="noopener">Florida</a> (in Jacksonville)</li>
+<li>11/05 - <a href="https://prf.hn/click/camref:1011l9Qnz/destination:https://www.stubhub.com/georgia-bulldogs-football-athens-tickets-11-5-2022/event/105129445/[p_id:1100l89314]" target="_blank" rel="noopener">Tennessee</a></li>
+<li>11/12 - <a href="https://prf.hn/click/camref:1011l9Qnz/destination:https://www.stubhub.com/mississippi-state-bulldogs-football-starkville-tickets-11-12-2022/event/105145692/[p_id:1100l89314][p_id:1100l89314]" target="_blank" rel="noopener">at Mississippi State</a></li>
+<li>11/19 - <a href="https://prf.hn/click/camref:1011l9Qnz/destination:https://www.stubhub.com/kentucky-wildcats-football-lexington-tickets-11-19-2022/event/105131154/[p_id:1100l89314]" target="_blank" rel="noopener">at Kentucky</a></li>
+<li>11/26 - <a href="https://prf.hn/click/camref:1011l9Qnz/destination:https://www.stubhub.com/georgia-bulldogs-football-athens-tickets-11-26-2022/event/105130888/[p_id:1100l89314]" target="_blank" rel="noopener">Georgia Tech</a></li>
+<li>12/03 - SEC Championship Game</li>
+</ul></div></section>			<div class="mvp-widget-ad left relative">
+				<span class="mvp-ad-label">Advertisement</span>
+				<a href="https://fanatics.ncw6.net/yXgzV" target="_blank" rel="noopener"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://www.sicemdawgs.com/wp/wp-content/uploads/2016/07/uga-fan-shop.jpg" /><noscript><img src="https://www.sicemdawgs.com/wp/wp-content/uploads/2016/07/uga-fan-shop.jpg" /></noscript></a>			</div><!--mvp-widget-ad-->
+					</div><!--mvp-side-wrap-->		</div><!--mvp-post-content-out-->
+	</div><!--mvp-sec-pad-->
+</article><!--mvp-article-wrap-->
+				</div><!--mvp-main-body-->
+			</div><!--mvp-main-box-cont-->
+		</div><!--mvp-main-body-wrap-->
+	</main><!--mvp-main-wrap-->
+			<div id="mvp-foot-ad-wrap" class="left relative">
+			<div class="mvp-main-box-cont">
+				<!-- SMG_Sicemdawgs/300x250_2a/sports/football/ncaa.general -->
+<div id='usmg_ad_SMG_Sicemdawgs_300x250_2a_sports_football_ncaa.general'>
+     <script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+         googletag.cmd.push(function() {
+             googletag.defineSlot('/7103,132671728/SMG_Sicemdawgs/300x250_2a/sports/football/ncaa.general', [[300,250],[300,600]], 'usmg_ad_SMG_Sicemdawgs_300x250_2a_sports_football_ncaa.general').addService(googletag.pubads());
+             googletag.enableServices();
+             googletag.display('usmg_ad_SMG_Sicemdawgs_300x250_2a_sports_football_ncaa.general');
+         });
+     </script>
+</div>			</div><!--mvp-main-box-cont-->
+		</div><!--mvp-foot-ad-wrap-->
+		<footer id="mvp-foot-wrap" class="left relative">
+		<div id="mvp-foot-top" class="left relative">
+			<div class="mvp-main-box-cont">
+				<div id="mvp-foot-logo" class="left relative">
+											<a href="https://www.sicemdawgs.com/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="SicEmDawgs.com" data-rjs="2" data-lazy-src="https://www.sicemdawgs.com/wp/wp-content/uploads/2019/11/sicemdawgs-footer-2019.png" /><noscript><img src="https://www.sicemdawgs.com/wp/wp-content/uploads/2019/11/sicemdawgs-footer-2019.png" alt="SicEmDawgs.com" data-rjs="2" /></noscript></a>
+									</div><!--mvp-foot-logo-->
+				<div id="mvp-foot-soc" class="left relative">
+					<ul class="mvp-foot-soc-list left relative">
+														<li><a href="http://www.facebook.com/sicemdawgscom" target="_blank" class="fa fa-facebook-official fa-2"></a></li>
+																			<li><a href="http://www.twitter.com/sicemdawgscom" target="_blank" class="fa fa-twitter fa-2"></a></li>
+																									<li><a href="http://www.instagram.com/sicemdawgscom" target="_blank" class="fa fa-instagram fa-2"></a></li>
+																																			</ul>
+				</div><!--mvp-foot-soc-->
+			</div><!--mvp-main-box-cont-->
+		</div><!--mvp-foot-top-->
+		<div id="mvp-foot-bot" class="left relative">
+			<div id="mvp-foot-menu-wrap" class="left relative">
+				<div class="mvp-main-box-cont">
+					<div id="mvp-foot-menu" class="left relative">
+						<div class="menu-footer-container"><ul id="menu-footer" class="menu"><li id="menu-item-24764" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-24764"><a href="https://www.sicemdawgs.com">Home</a></li>
+<li id="menu-item-39944" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39944"><a href="https://www.sicemdawgs.com/2022-uga-football-schedule/">UGA Football Schedule</a></li>
+<li id="menu-item-24766" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-227 current_page_item menu-item-24766"><a href="https://www.sicemdawgs.com/uga-football-roster/" aria-current="page">UGA Football Roster</a></li>
+</ul></div>					</div><!--mvp-foot-menu-->
+				</div><!--mvp-main-box-cont-->
+			</div><!--mvp-foot-menu-wrap-->
+			<div id="mvp-foot-copy-wrap" class="left relative">
+				<div class="mvp-main-box-cont">
+					<div id="mvp-foot-copy" class="left relative">
+						<p>© 2022 SicEmDawgs.com - Partner of USA TODAY Sports Digital Properties</p>
+					</div><!--mvp-foot-copy-->
+				</div><!--mvp-main-box-cont-->
+			</div><!--mvp-foot-copy-wrap-->
+		</div><!--mvp-foot-bot-->
+	</footer>
+	</div><!--mvp-site-->
+										<div class="mvp-fly-top back-to-top">
+	<i class="fa fa-angle-up fa-3"></i>
+</div><!--mvp-fly-top-->
+<div class="mvp-fly-fade mvp-fly-but-click">
+</div><!--mvp-fly-fade-->
+<script type='text/javascript' src='https://www.sicemdawgs.com/wp/wp-content/themes/the-league/js/mvpcustom.js?ver=5.9.2' id='mvp-custom-js' defer></script>
+<script type='text/javascript' id='mvp-custom-js-after'>
+	jQuery(document).ready(function($) {
+	$(window).load(function(){
+	var aboveHeight = $("#mvp-top-head-wrap").outerHeight();
+	$(window).scroll(function(event){
+	    	if ($(window).scrollTop() > aboveHeight){
+	    		$("#mvp-top-head-wrap").addClass("mvp-score-up");
+			$("#mvp-wallpaper").addClass("mvp-wall-up");
+			$(".mvp-fly-top").addClass("mvp-to-top");
+	    	} else {
+	    		$("#mvp-top-head-wrap").removeClass("mvp-score-up");
+			$("#mvp-wallpaper").removeClass("mvp-wall-up");
+	    		$(".mvp-fly-top").removeClass("mvp-to-top");
+	    	}
+	});
+	});
+	});
+	
+
+	jQuery(document).ready(function($) {
+	// Main Menu Dropdown Toggle
+	$(".mvp-fly-nav-menu .menu-item-has-children a").click(function(event){
+	  event.stopPropagation();
+	  location.href = this.href;
+  	});
+
+	$(".mvp-fly-nav-menu .menu-item-has-children").click(function(){
+    	  $(this).addClass("toggled");
+    	  if($(".menu-item-has-children").hasClass("toggled"))
+    	  {
+    	  $(this).children("ul").toggle();
+	  $(".mvp-fly-nav-menu").getNiceScroll().resize();
+	  }
+	  $(this).toggleClass("tog-minus");
+    	  return false;
+  	});
+
+	// Main Menu Scroll
+	$(window).load(function(){
+	  $(".mvp-fly-nav-menu").niceScroll({cursorcolor:"#888",cursorwidth: 7,cursorborder: 0,zindex:999999});
+	});
+	});
+	
+
+	jQuery(document).ready(function($) {
+	$(".infinite-content").infinitescroll({
+	  navSelector: ".mvp-nav-links",
+	  nextSelector: ".mvp-nav-links a:first",
+	  itemSelector: ".infinite-post",
+	  errorCallback: function(){ $(".mvp-inf-more-but").css("display", "none") }
+	});
+	$(window).unbind(".infscr");
+	$(".mvp-inf-more-but").click(function(){
+   		$(".infinite-content").infinitescroll("retrieve");
+        	return false;
+	});
+	$(window).load(function(){
+		if ($(".mvp-nav-links a").length) {
+			$(".mvp-inf-more-but").css("display","inline-block");
+		} else {
+			$(".mvp-inf-more-but").css("display","none");
+		}
+	});
+	});
+	
+</script>
+<script data-minify="1" type='text/javascript' src='https://www.sicemdawgs.com/wp/wp-content/cache/min/1/wp/wp-content/themes/the-league/js/scripts.js?ver=1647485200' id='clickmag-js' defer></script>
+<script data-minify="1" type='text/javascript' src='https://www.sicemdawgs.com/wp/wp-content/cache/min/1/wp/wp-content/themes/the-league/js/retina.js?ver=1647485200' id='retina-js' defer></script>
+<script type='text/javascript' src='https://www.sicemdawgs.com/wp/wp-content/themes/the-league/js/jquery.infinitescroll.min.js?ver=5.9.2' id='infinitescroll-js' defer></script>
+<script type='text/javascript' src='https://www.sicemdawgs.com/wp/wp-includes/js/comment-reply.min.js?ver=5.9.2' id='comment-reply-js' defer></script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.sicemdawgs.com/wp/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script type='text/javascript' src="http://www.sicemdawgs.com/wp/wp-content/themes/flex-mag/js/tablesort.min.js" defer></script>
+
+<script type="rocketlazyloadscript" language="javascript" data-rocket-type="text/javascript" >
+function jumpto(x){
+
+if (document.form1.jumpmenu.value != "null") {
+	document.location.href = x
+	}
+}
+</script>
+
+<!--home page custom JS-->
+<script type="rocketlazyloadscript">"use strict";function wprRemoveCPCSS(){var preload_stylesheets=document.querySelectorAll('link[data-rocket-async="style"][rel="preload"]');if(preload_stylesheets&&0<preload_stylesheets.length)for(var stylesheet_index=0;stylesheet_index<preload_stylesheets.length;stylesheet_index++){var media=preload_stylesheets[stylesheet_index].getAttribute("media")||"all";if(window.matchMedia(media).matches)return void setTimeout(wprRemoveCPCSS,200)}var elem=document.getElementById("rocket-critical-css");elem&&"remove"in elem&&elem.remove()}window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link rel='stylesheet' id='wp-block-library-css'  href='https://www.sicemdawgs.com/wp/wp-includes/css/dist/block-library/style.min.css?ver=5.9.2' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='mvp-custom-style-css'  href='https://www.sicemdawgs.com/wp/wp-content/cache/min/1/wp/wp-content/themes/the-league/style.css?ver=1647485199' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='fontawesome-child-css'  href='https://www.sicemdawgs.com/wp/wp-content/cache/min/1/wp/wp-content/themes/the-league-child/font-awesome/css/font-awesome.css?ver=1647485199' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='mvp-custom-child-style-css'  href='https://www.sicemdawgs.com/wp/wp-content/cache/min/1/wp/wp-content/themes/the-league-child/style.css?ver=1647485200' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='mvp-reset-css'  href='https://www.sicemdawgs.com/wp/wp-content/cache/min/1/wp/wp-content/themes/the-league/css/reset.css?ver=1647485200' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='fontawesome-css'  href='https://www.sicemdawgs.com/wp/wp-content/cache/min/1/wp/wp-content/themes/the-league-child/font-awesome/css/font-awesome.css?ver=1647485199' type='text/css' media='all' /><link rel='stylesheet' id='mvp-fonts-css'  href='//fonts.googleapis.com/css?family=Advent+Pro%3A700%7CRoboto%3A300%2C400%2C500%2C700%2C900%7COswald%3A300%2C400%2C700%7CLato%3A300%2C400%2C700%7CWork+Sans%3A200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7COpen+Sans%3A400%2C700%2C800%7COpen+Sans%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7COpen+Sans%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7COpen+Sans%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7COpen+Sans%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7COpen+Sans%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900&#038;subset=latin,latin-ext,cyrillic,cyrillic-ext,greek-ext,greek,vietnamese' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='mvp-media-queries-css'  href='https://www.sicemdawgs.com/wp/wp-content/cache/min/1/wp/wp-content/themes/the-league/css/media-queries.css?ver=1647485200' type='text/css' media='all' /></noscript></body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
